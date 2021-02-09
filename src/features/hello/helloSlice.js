@@ -1,21 +1,22 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit'
 
 export const helloSlice = createSlice({
   name: 'hello',
   initialState: {
-    hello: "helloworld",
+    hello: 'helloworld',
   },
   reducers: {
-    check: (state) => { state.hello = 'アンニョン' },
-    go: (state) => { state.hello = 'check' },
+    check: (state) => {
+      state.hello = 'アンニョン'
+    },
+    go: (state) => {
+      state.hello = 'check'
+    },
   },
-});
+})
 
-export const {
-  check,
-  go
-} = helloSlice.actions;
+export const { check, go } = helloSlice.actions
 
-export const selectHello = state => state.hello.hello;
+export const selectHello = (state) => state.hello.hello
 
-export default helloSlice.reducer;
+export default helloSlice.reducer

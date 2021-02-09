@@ -1,8 +1,8 @@
-import { configureStore } from '@reduxjs/toolkit';
-import helloReducer from '../src/features/hello/helloSlice';
+import { configureStore } from '@reduxjs/toolkit'
+import helloReducer from '../src/features/hello/helloSlice'
 
 export default configureStore({
   reducer: {
-    hello:helloReducer,
+    hello: helloReducer,
   },
-});
+})
