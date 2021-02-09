@@ -1,0 +1,10 @@
+:root {
+  --c-primary: #3ea8ff;
+}
+
+/*
+-----使う時-----
+.primary { 
+  background: var(--c-primary);
+}
+*/
