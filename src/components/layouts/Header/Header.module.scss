@@ -1,0 +1,22 @@
+@import '../../../../styles/variables.scss';
+
+.container {
+  width:100%;
+  position: fixed;
+  height: 10vh;
+  background-color:#b89470;
+  
+
+    .header_title{
+    font-size: 40px;
+    text-align: center;
+    color: rgb(232, 228, 228);
+
+      span{
+        color: #D65B5Bed;
+        font-weight: lighter;
+      }
+    }
+  }
+
+

@@ -1,7 +1,7 @@
-import '../styles/globals.css'
+import '../../styles/globals.css'
 // Provider を読み込む
 import { Provider } from 'react-redux'
-import store from '../src/store.js';
+import store from '../store.js'
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -9,7 +9,6 @@ function MyApp({ Component, pageProps }) {
       <Component {...pageProps} />
     </Provider>
   )
-    
 }
 
 export default MyApp

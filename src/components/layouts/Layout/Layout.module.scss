@@ -1,0 +1,49 @@
+@import '../../../../styles/variables.scss';
+
+.main {
+  width:100%;
+  padding-top: 10vh;
+  background-color: rgb(255, 255, 255);
+  height:100vh;
+  display: flex;
+  justify-content: space-around;
+  @include mq(md) {
+    display: block;
+  }
+
+  .main_left{
+    width:20%;
+    height: 100vh;
+    background-color: #767474;
+    color: white;
+    position: fixed;
+    top: 10vh;
+    left: 0px;
+    @include mq(md) {
+    display: none;
+    }
+    .block{
+      text-align: center;
+      display:block;
+      // background-color: pink;
+      padding:5px;
+      color: white;
+      border-bottom: 1px solid rgb(255, 255, 255);
+    }
+  }
+
+  .main_right{
+    width:80%;
+    height:300vh;
+    margin-left: 20vw;
+
+    @include mq(md) {
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+}
+
+.footer{
+  background-color: aqua;
+}
