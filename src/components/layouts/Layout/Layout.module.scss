@@ -1,11 +1,11 @@
 @import '../../../../styles/variables.scss';
 
+
 .main {
   width:100%;
   padding-top: 10vh;
-  background-color: rgb(255, 255, 255);
-  height:100vh;
   display: flex;
+  height: auto;
   justify-content: space-around;
   @include mq(md) {
     display: block;
@@ -14,14 +14,16 @@
   .main_left{
     width:20%;
     height: 100vh;
-    background-color: #767474;
+    background-color: #383633;
     color: white;
     position: fixed;
     top: 10vh;
     left: 0px;
+
     @include mq(md) {
     display: none;
     }
+
     .block{
       text-align: center;
       display:block;
@@ -34,7 +36,7 @@
 
   .main_right{
     width:80%;
-    height:300vh;
+    height: auto;
     margin-left: 20vw;
 
     @include mq(md) {
@@ -42,8 +44,4 @@
       margin-left: 0;
     }
   }
-}
-
-.footer{
-  background-color: aqua;
 }

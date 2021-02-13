@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import { Header } from '../Header'
+import Footer from '../Footer/Footer'
 import NavLink from './NavLink'
 import styles from './Layout.module.scss'
 
@@ -10,7 +11,6 @@ export const Layout = ({ children, title = 'HP by Nextjs' }) => {
       <Head>
         <title>{title}</title>
       </Head>
-
       <Header />
       <main className={styles.main}>
         <div className={styles.main_left}>
@@ -49,10 +49,7 @@ export const Layout = ({ children, title = 'HP by Nextjs' }) => {
         </div>
         <div className={styles.main_right}>{children}</div>
       </main>
-
-      <footer className="footer">
-        <p>ss</p>
-      </footer>
+      <Footer />
     </div>
   )
 }
