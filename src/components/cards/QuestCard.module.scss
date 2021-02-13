@@ -1,0 +1,30 @@
+@import '../../../styles/variables';
+
+.bord{
+  margin: 0 auto;
+  border: 1px solid rgb(252, 175, 167);
+  width: min(650px,95vw);
+  height: 20vh;
+  
+
+  .flex{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .bord_time{
+    display:inline-block;
+    color: rgba(36, 30, 30, 0.515);
+  }
+  .title{
+    font-size:14px;
+  }
+  .pos{
+    font-size: 12px;
+  }
+  .bord_btn{
+    color: white;
+    background-color: rgb(32, 113, 218);
+  }
+
+}
