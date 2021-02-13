@@ -1,10 +1,14 @@
 @import '../../../styles/variables';
 
 .bord{
-  margin: 0 auto;
-  border: 1px solid rgb(252, 175, 167);
+  margin:  30px auto;
+  border: 2px solid rgba(133, 101, 101, 0.83);
   width: min(650px,95vw);
   height: 20vh;
+  background-image: url(../../../public/bord.jpg); background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+
   
 
   .flex{
