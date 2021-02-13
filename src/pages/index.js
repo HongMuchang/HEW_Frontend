@@ -1,9 +1,11 @@
-import Layout from '../components/layouts/Layout'
+import { Layout } from '../components/layouts/Layout/Layout'
 
 export default function Home() {
   return (
-    <Layout title="Hello World">
-      <h1>Home</h1>
-    </Layout>
+    <div>
+      <Layout title="Guild Hack">
+        <h1>Home</h1>
+      </Layout>
+    </div>
   )
 }
