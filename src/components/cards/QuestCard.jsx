@@ -10,7 +10,7 @@ export default function QuestCard({ title, contact, time }) {
   return (
     <Card className={styles.bord}>
       <CardContent>
-        <h3>dd{title}</h3>
+        <h3>クエスト名:{title}</h3>
       </CardContent>
       {contact}
       <div className={styles.flex}>
