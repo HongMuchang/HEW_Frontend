@@ -27,6 +27,7 @@ body {
 .b_color {
   background: var(--base-color);
 }
+
 /*
 -----使う時-----
 .primary { 
