@@ -1,8 +1,8 @@
 import { Layout } from '../../components/layouts/Layout/Layout'
 import QuestCard from '../../components/cards/QuestCard'
-import styles from './quest_board.module.scss'
+import styles from './quest_bord.module.scss'
 
-export default function quest_board({ current }) {
+export default function quest_bord({ current }) {
   const bords = [
     { id: 1, title: 'こんいちは', contact: 'helloworld', time: '2020-11-21' },
     { id: 2, title: 'こんいちは', contact: 'helloworld', time: '2020-11-22' },

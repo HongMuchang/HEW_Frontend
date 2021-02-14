@@ -20,9 +20,14 @@ export const Layout = ({ children, title = 'HP by Nextjs' }) => {
                 <NavLink name="トップページ" />
               </a>
             </Link>
-            <Link href="/quest_board">
+            <Link href="/quest_bord">
               <a className={styles.block}>
                 <NavLink name="クエストボード" />
+              </a>
+            </Link>
+            <Link href="/post_quest_bord">
+              <a className={styles.block}>
+                <NavLink name="クエストに参加" />
               </a>
             </Link>
             <Link href="/contact-page">
