@@ -1,5 +1,5 @@
 {
-  "name": "p",
+  "name": "guildhack",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -16,6 +16,7 @@
     "autoprefixer": "^10.2.4",
     "babel-eslint": "^10.1.0",
     "file-loader": "^6.2.0",
+    "firebase": "^8.2.7",
     "next": "10.0.4",
     "postcss": "^8.2.4",
     "react": "^17.0.1",
