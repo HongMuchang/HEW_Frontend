@@ -1,0 +1,40 @@
+@import '../../../../styles/variables';
+
+.frontend{
+  width: 40px;
+  height: 40px;
+  background-image: url('../../../../public/frontend.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-color: #F3E100;
+  .frontend_text{
+    display: none;
+  }
+}
+.backend{
+  width: 40px;
+  height: 40px;
+  background-image: url('../../../../public/backend.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-color: #0097DB;
+
+  .backend_text{
+    display: none;
+  }
+}
+.infra{
+  width: 40px;
+  height: 40px;
+  background-image: url('../../../../public/infra.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-color: #F08300;
+
+  .infra_text{
+    display: none;
+  }
+}

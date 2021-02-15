@@ -1,13 +1,33 @@
 @import '../../../styles/variables';
 
+  
+.bords{
+  display: flex;
+  justify-content: space-around;
+  @include mq(md) {
+    display: block;
+  }
+
+  .bord_left{
+    width: 40%;
+
   .bord_text_area{
     padding: 20px;
 
     .bord_time{
-      margin-left:40px;
+      margin-left:30px;
     }
     .bord_time_select{
       margin-left:40px;
       padding-left: 2px;
     }
   }
+  .position_card{
+    display: flex;
+  }
+}
+.bord_right{
+  width: 40%;
+}
+
+}

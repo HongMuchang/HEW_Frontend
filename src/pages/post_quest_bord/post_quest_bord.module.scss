@@ -13,12 +13,17 @@
     border-radius: 5px;
     margin: 0 auto;
     height: 75vh;
+    // height: auto;
     background-image: url('../../../public/bord.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;    
-  
-    .a{
+
+      @include mq(md) {
+        height: auto;
+      }
+
+      .a{
       background-color: white;
     }
   }
