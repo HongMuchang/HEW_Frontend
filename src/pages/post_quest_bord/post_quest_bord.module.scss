@@ -1,6 +1,6 @@
 @import '../../../styles/variables';
 
-
+//クエスト募集サイトの背景画像
 .bords {
   padding-bottom: 50px;
   background-image: url('../../../public/bord_image.jpg');
@@ -8,8 +8,7 @@
   background-size: cover;
   background-position: center center;
 
-  .bord{
-    // background-color:white;
+  .bord{//クエスト募集サイトの背景画像
     width: min(80vw,900px);
     border-radius: 5px;
     margin: 0 auto;
