@@ -1,11 +1,13 @@
 @import '../../../styles/variables';
 
+//クエスト一覧の画像
 .bord{
   margin:  30px auto;
   border: 2px solid rgba(133, 101, 101, 0.864);
   width: min(650px,95vw);
   height: 20vh;
-  background-image: url(../../../public/bord.jpg); background-repeat: no-repeat;
+  background-image: url('../../../public/bord.jpg'); 
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
 

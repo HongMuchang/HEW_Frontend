@@ -1,9 +1,13 @@
 @import '../../../styles/variables';
 
-.bords {
-  padding-bottom: 50px;
-  background-image: url('../../../public/bord.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-}
+  .bord_text_area{
+    padding: 20px;
+
+    .bord_time{
+      margin-left:40px;
+    }
+    .bord_time_select{
+      margin-left:40px;
+      padding-left: 2px;
+    }
+  }

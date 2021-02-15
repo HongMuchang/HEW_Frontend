@@ -1,9 +1,11 @@
 @import '../../../styles/variables';
 
-
-.text_middle{
-  width: 30ch;
+.text{
+  font-weight: 200;
+  font-family: 'Times New Roman', Times, serif;
 }
+
 .white{
-  background-color: white;
+  background-color: rgb(225, 215, 215);
+  opacity: 0.7;
 }
