@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
-import helloReducer from '../src/features/hello/helloSlice'
+import userSlice from './features/user/userSlice'
 
 export default configureStore({
   reducer: {
-    hello: helloReducer,
+    user: userSlice,
   },
 })
