@@ -9,6 +9,38 @@ import IconsList from '../parts/IconsList'
 import CheckBox from '../parts/CheckBox'
 
 export default function PostQuestCard() {
+  const count = [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+  ]
   return (
     <div className={styles.bords}>
       <div className={styles.bord_left}>
@@ -30,35 +62,9 @@ export default function PostQuestCard() {
               <MenuItem value="">
                 <em>未定</em>
               </MenuItem>
-              <MenuItem value={1}>1</MenuItem>
-              <MenuItem value={2}>2</MenuItem>
-              <MenuItem value={3}>3</MenuItem>
-              <MenuItem value={4}>4</MenuItem>
-              <MenuItem value={5}>5</MenuItem>
-              <MenuItem value={6}>6</MenuItem>
-              <MenuItem value={7}>7</MenuItem>
-              <MenuItem value={8}>8</MenuItem>
-              <MenuItem value={9}>9</MenuItem>
-              <MenuItem value={1}>11</MenuItem>
-              <MenuItem value={2}>12</MenuItem>
-              <MenuItem value={3}>13</MenuItem>
-              <MenuItem value={4}>14</MenuItem>
-              <MenuItem value={5}>15</MenuItem>
-              <MenuItem value={6}>16</MenuItem>
-              <MenuItem value={7}>17</MenuItem>
-              <MenuItem value={8}>18</MenuItem>
-              <MenuItem value={9}>19</MenuItem>
-              <MenuItem value={1}>20</MenuItem>
-              <MenuItem value={2}>21</MenuItem>
-              <MenuItem value={2}>22</MenuItem>
-              <MenuItem value={3}>23</MenuItem>
-              <MenuItem value={4}>24</MenuItem>
-              <MenuItem value={5}>25</MenuItem>
-              <MenuItem value={6}>26</MenuItem>
-              <MenuItem value={7}>27</MenuItem>
-              <MenuItem value={8}>28</MenuItem>
-              <MenuItem value={9}>29</MenuItem>
-              <MenuItem value={2}>30</MenuItem>
+              {count.map((i) => (
+                <MenuItem value={i}>{i}</MenuItem>
+              ))}
             </Select>
           </FormControl>
         </div>
