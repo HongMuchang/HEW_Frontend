@@ -28,7 +28,7 @@ export default function PostQuestCard() {
               className={styles.bord_time_select}
             >
               <MenuItem value="">
-                <em>None</em>
+                <em>未定</em>
               </MenuItem>
               <MenuItem value={1}>1</MenuItem>
               <MenuItem value={2}>2</MenuItem>
@@ -39,13 +39,26 @@ export default function PostQuestCard() {
               <MenuItem value={7}>7</MenuItem>
               <MenuItem value={8}>8</MenuItem>
               <MenuItem value={9}>9</MenuItem>
-              <MenuItem value={10}>10</MenuItem>
-              <MenuItem value={11}>11</MenuItem>
-              <MenuItem value={12}>12</MenuItem>
-              <MenuItem value={13}>13</MenuItem>
-              <MenuItem value={14}>14</MenuItem>
-              <MenuItem value={15}>15</MenuItem>
-              <MenuItem value={16}>16</MenuItem>
+              <MenuItem value={1}>11</MenuItem>
+              <MenuItem value={2}>12</MenuItem>
+              <MenuItem value={3}>13</MenuItem>
+              <MenuItem value={4}>14</MenuItem>
+              <MenuItem value={5}>15</MenuItem>
+              <MenuItem value={6}>16</MenuItem>
+              <MenuItem value={7}>17</MenuItem>
+              <MenuItem value={8}>18</MenuItem>
+              <MenuItem value={9}>19</MenuItem>
+              <MenuItem value={1}>20</MenuItem>
+              <MenuItem value={2}>21</MenuItem>
+              <MenuItem value={2}>22</MenuItem>
+              <MenuItem value={3}>23</MenuItem>
+              <MenuItem value={4}>24</MenuItem>
+              <MenuItem value={5}>25</MenuItem>
+              <MenuItem value={6}>26</MenuItem>
+              <MenuItem value={7}>27</MenuItem>
+              <MenuItem value={8}>28</MenuItem>
+              <MenuItem value={9}>29</MenuItem>
+              <MenuItem value={2}>30</MenuItem>
             </Select>
           </FormControl>
         </div>
@@ -57,6 +70,9 @@ export default function PostQuestCard() {
         <CheckBox title={'報酬'} one={'有'} two={'無'} three={'未'} />
       </div>
       <div className={styles.bord_right}>
+        <div className={styles.bord_text_area}>
+          <TextBox name={'一言'} className={styles.bord_text} />
+        </div>
         <div className={styles.position_card}>
           <p>自分の役割</p>
           <IconsList />
