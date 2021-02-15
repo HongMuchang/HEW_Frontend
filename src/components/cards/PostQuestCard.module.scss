@@ -26,8 +26,16 @@
     display: flex;
   }
 }
+// -----左側-----
 .bord_right{
   width: 40%;
+
+  .bord_text_area{
+    padding-top: 20px;
+  }
+  .position_card{
+    padding-top: 40px;
+  }
 }
 
 }

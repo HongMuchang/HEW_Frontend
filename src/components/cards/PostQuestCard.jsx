@@ -9,6 +9,38 @@ import IconsList from '../parts/IconsList'
 import CheckBox from '../parts/CheckBox'
 
 export default function PostQuestCard() {
+  const count = [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+  ]
   return (
     <div className={styles.bords}>
       <div className={styles.bord_left}>
@@ -28,24 +60,11 @@ export default function PostQuestCard() {
               className={styles.bord_time_select}
             >
               <MenuItem value="">
-                <em>None</em>
+                <em>未定</em>
               </MenuItem>
-              <MenuItem value={1}>1</MenuItem>
-              <MenuItem value={2}>2</MenuItem>
-              <MenuItem value={3}>3</MenuItem>
-              <MenuItem value={4}>4</MenuItem>
-              <MenuItem value={5}>5</MenuItem>
-              <MenuItem value={6}>6</MenuItem>
-              <MenuItem value={7}>7</MenuItem>
-              <MenuItem value={8}>8</MenuItem>
-              <MenuItem value={9}>9</MenuItem>
-              <MenuItem value={10}>10</MenuItem>
-              <MenuItem value={11}>11</MenuItem>
-              <MenuItem value={12}>12</MenuItem>
-              <MenuItem value={13}>13</MenuItem>
-              <MenuItem value={14}>14</MenuItem>
-              <MenuItem value={15}>15</MenuItem>
-              <MenuItem value={16}>16</MenuItem>
+              {count.map((i) => (
+                <MenuItem value={i}>{i}</MenuItem>
+              ))}
             </Select>
           </FormControl>
         </div>
@@ -57,6 +76,9 @@ export default function PostQuestCard() {
         <CheckBox title={'報酬'} one={'有'} two={'無'} three={'未'} />
       </div>
       <div className={styles.bord_right}>
+        <div className={styles.bord_text_area}>
+          <TextBox name={'一言'} className={styles.bord_text} />
+        </div>
         <div className={styles.position_card}>
           <p>自分の役割</p>
           <IconsList />
