@@ -1,5 +1,7 @@
 import { Layout } from '../components/layouts/Layout/Layout'
 import Login from './login'
+import Bord from '../features/bord/Bord'
+
 export default function Home() {
   const bool = true
 
@@ -7,6 +9,7 @@ export default function Home() {
     <div>
       {bool ? (
         <Layout title="Guild Hack">
+          <Bord />
           <h1>Home</h1>
         </Layout>
       ) : (
