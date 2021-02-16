@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
-import helloReducer from '../src/features/hello/helloSlice'
-import bordSlice from '../src/features/bord/bordSlice'
+import bordReducer from './features/bord/bordSlice'
+import counterReducer from './features/counter/counterSlice'
 export default configureStore({
   reducer: {
-    hello: helloReducer,
-    bord: bordSlice,
+    counter: counterReducer,
+    bord: bordReducer,
   },
 })

@@ -1,15 +1,13 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { selectHello, go, check } from './hellorSlice'
+import { selectbords, check } from './bordSlice'
 
-export function Bord() {
-  const hello = useSelector(selectHello)
+export default function Bord() {
+  const bords = useSelector(selectbords)
   const dispatch = useDispatch()
 
   return (
     <div>
-      <p>{hello}</p>
-      <button onClick={() => dispatch(go())}>変更</button>
-
+      <p>{bords}</p>
       <button onClick={() => dispatch(check())}>アンニョン</button>
     </div>
   )

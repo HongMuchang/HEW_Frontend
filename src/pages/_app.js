@@ -1,7 +1,6 @@
 import '../../styles/globals.css'
-// Provider を読み込む
 import { Provider } from 'react-redux'
-import store from '../store.js'
+import store from '../store'
 
 function MyApp({ Component, pageProps }) {
   return (
