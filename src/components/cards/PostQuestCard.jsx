@@ -63,7 +63,9 @@ export default function PostQuestCard() {
                 <em>未定</em>
               </MenuItem>
               {count.map((i) => (
-                <MenuItem value={i}>{i}</MenuItem>
+                <MenuItem key={i} value={i}>
+                  {i}
+                </MenuItem>
               ))}
             </Select>
           </FormControl>
