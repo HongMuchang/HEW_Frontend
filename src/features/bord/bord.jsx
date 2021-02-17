@@ -209,7 +209,7 @@ export default function Bord() {
           {/* ------Position------- */}
           <div>
             <FormControl component="fieldset" className={styles.content}>
-            <Title name={'自分の役職'} />
+              <Title name={'自分の役職'} />
               <RadioGroup aria-label="gender" name="position">
                 <div className={styles.icons}>
                   <FrontIcon />
