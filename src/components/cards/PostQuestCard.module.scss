@@ -5,12 +5,14 @@
   display: flex;
   justify-content: space-around;
   @include mq(md) {
+    
     display: block;
   }
 
   .bord_left{
     width: 40%;
 
+    
   .bord_text_area{
     padding: 20px;
 

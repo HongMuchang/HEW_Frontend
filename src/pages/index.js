@@ -9,8 +9,7 @@ export default function Home() {
     <div>
       {bool ? (
         <Layout title="Guild Hack">
-          <Bord />
-          <h1>Home</h1>
+          <p>saa</p>{' '}
         </Layout>
       ) : (
         <Login />

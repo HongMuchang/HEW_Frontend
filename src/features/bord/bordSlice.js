@@ -25,6 +25,7 @@ export const bordSlice = createSlice({
   name: 'bord',
   initialState,
   reducers: {
+    //募集するボードの状態
     createBord: (state, action) => {
       const bord = state.create_bord
       bord.id = action.payload.id + 1
@@ -39,13 +40,17 @@ export const bordSlice = createSlice({
       bord.position = action.payload.position
     },
 
+    //bordCountsの値
     getBordCounts: (state, action) => {
       state.bordCount += action.payload
     },
 
+    //bordsに追加
     pushBord: (state, action) => {
       state.bords.unshift(action.payload)
     },
+
+    //リセット
     resetBord: (state) => {
       const bord = state.create_bord
       bord.title = ''
