@@ -9,38 +9,6 @@ import IconsList from '../parts/IconsList'
 import CheckBox from '../parts/CheckBox'
 
 export default function PostQuestCard() {
-  const count = [
-    0,
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    19,
-    21,
-    22,
-    23,
-    24,
-    25,
-    26,
-    27,
-    28,
-    29,
-    30,
-  ]
   return (
     <div className={styles.bords}>
       <div className={styles.bord_left}>
