@@ -1,49 +1,22 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  bordCount: 3,
-  bords: [
-    {
-      id: 1,
-      master_id: 1,
-      title: 'lll',
-      event_day: '2020-12-31',
-      day: 5,
-      origanizer: 'TechBowl',
-      commit: 1,
-      Beginer: 1,
-      reword: 1,
-      meg: 'よろしくお願いします',
-      position: 1,
-    },
-    {
-      id: 2,
-      master_id: 2,
-      title: 'lll',
-      event_day: '2020-12-31',
-      day: 5,
-      origanizer: 'TechBowl',
-      commit: 1,
-      Beginer: 1,
-      reword: 1,
-      meg: 'よろしくお願いします',
-      position: 1,
-    },
-  ],
+  bordCount: 0,
+  bords: [],
   selectedBords: {
-    id: 1,
+    id: 0,
   },
   create_bord: {
     id: 1,
-    master_id: 1,
+    master_id: 0,
     title: '',
-    event_day: '2020-12-31',
-    day: 5,
-    origanizer: 'TechBowl',
+    event_day: '2021-01-01',
+    day: 0,
+    origanizer: '',
     commit: 1,
     Beginer: 1,
     reword: 1,
-    meg: 'よろしくお願いします',
+    msg: '',
     position: 1,
   },
 }
@@ -52,21 +25,43 @@ export const bordSlice = createSlice({
   name: 'bord',
   initialState,
   reducers: {
-    createdbord: (state, action) => {
-      console.log(action)
+    createBord: (state, action) => {
       const bord = state.create_bord
-      bord.id = action.payload.id
+      bord.id = action.payload.id + 1
       bord.title = action.payload.title
-      bord.commit = action.payload.commit
+      bord.day = action.payload.day
+      bord.event_day = action.payload.event_day
       bord.origanizer = action.payload.origanizer
+      bord.commit = action.payload.commit
+      bord.Beginer = action.payload.Beginer
+      bord.reword = action.payload.reword
+      bord.msg = action.payload.msg
+      bord.position = action.payload.position
     },
-    check: (state, action) => {
+
+    getBordCounts: (state, action) => {
       state.bordCount += action.payload
+    },
+
+    pushBord: (state, action) => {
+      state.bords.unshift(action.payload)
+    },
+    resetBord: (state) => {
+      const bord = state.create_bord
+      bord.title = ''
+      bord.day = ''
+      bord.event_day = '2021-01-01'
+      bord.origanizer = ''
+      bord.commit = 'null'
+      bord.Beginer = 'null'
+      bord.reword = ''
+      bord.msg = ''
+      bord.position = 'frontend'
     },
   },
 })
 export const selectbords = (state) => state.bord.bordCount
 
-export const { createdbord, check } = bordSlice.actions
+export const { createBord, getBordCounts, pushBord, resetBord } = bordSlice.actions
 
 export default bordSlice.reducer
