@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styles from './Bord.module.scss'
 import { useDispatch, useSelector } from 'react-redux'
 import { createBord, getBordCounts, pushBord, resetBord } from './bordSlice'
+import { selectUser } from '../user/userSlice'
 import { FrontIcon, BackIcon, InfraIcon } from './../../components/parts/icons/index'
 import { Title, Modal } from '../../components/parts/index'
 import {
@@ -19,6 +20,7 @@ export default function Bord() {
   const dispatch = useDispatch()
   const bords = useSelector((state) => state.bord.create_bord) //bordsの配列
   const bordCount = useSelector((state) => state.bord.bordCount) //今まで追加された数
+  const user_masterid = useSelector((state) => state.user) //今まで追加された数
 
   const [title, setTitle] = useState('')
   const [event_day, setEvent_day] = useState('')
@@ -33,6 +35,7 @@ export default function Bord() {
   dispatch(
     createBord({
       id: bordCount,
+      master_id: user_masterid.user.uid,
       title: title,
       event_day: event_day,
       day: day,
@@ -48,7 +51,7 @@ export default function Bord() {
   const postQuest = () => {
     dispatch(getBordCounts(1))
     dispatch(pushBord(bords))
-    dispatch(resetBord())
+    dispatch(resetBord(user_masterid.user.uid))
     alert('追加完了しました。')
   }
 
