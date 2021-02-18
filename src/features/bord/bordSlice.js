@@ -52,7 +52,7 @@ export const bordSlice = createSlice({
     },
 
     //リセット
-    resetBord: (state, action) => {
+    resetBord: (state) => {
       const bord = state.create_bord
       bord.title = ''
       bord.master_id = ''
