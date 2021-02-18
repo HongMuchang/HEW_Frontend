@@ -29,6 +29,7 @@ export const bordSlice = createSlice({
     createBord: (state, action) => {
       const bord = state.create_bord
       bord.id = action.payload.id + 1
+      bord.master_id = action.payload.master_id
       bord.title = action.payload.title
       bord.day = action.payload.day
       bord.event_day = action.payload.event_day
@@ -51,9 +52,10 @@ export const bordSlice = createSlice({
     },
 
     //リセット
-    resetBord: (state) => {
+    resetBord: (state, action) => {
       const bord = state.create_bord
       bord.title = ''
+      bord.master_id = ''
       bord.day = ''
       bord.event_day = '2021-01-01'
       bord.origanizer = ''
