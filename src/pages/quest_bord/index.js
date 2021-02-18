@@ -1,26 +1,21 @@
 import { Layout } from '../../components/layouts/Layout/Layout'
 import QuestCard from '../../components/cards/QuestCard'
 import styles from './quest_bord.module.scss'
+import { getAllPostsData } from '../../../lib/post'
+import Link from 'next/link'
 
-export default function quest_bord({ current }) {
-  const bords = [
-    { id: 1, title: 'こんいちは', contact: 'helloworld', time: '2020-11-21' },
-    { id: 2, title: 'こんいちは', contact: 'helloworld', time: '2020-11-22' },
-    { id: 3, title: 'こんいちは', contact: 'helloworld', time: '2020-11-23' },
-    { id: 4, title: 'こんいちは', contact: 'helloworld', time: '2020-11-24' },
-    { id: 5, title: 'こんいちは', contact: 'helloworld', time: '2020-11-25' },
-    { id: 6, title: 'こんいちは', contact: 'helloworld', time: '2020-11-26' },
-  ]
-
+export default function quest_bord({ posts }) {
   return (
     <Layout title="Guild Hack">
       <div className={styles.bords}>
         <h1>quest_board</h1>
         <ul>
-          {bords.map((bord, index) => (
-            <li key={index}>
-              <QuestCard title={bord.title} contact={bord.contact} time={bord.time} />
-            </li>
+          {posts.map((post, index) => (
+            <Link href={`/quest_bord/${post.id}`}>
+              <li key={index}>
+                <QuestCard title={post.title} contact={post.body} time={post.id} />
+              </li>
+            </Link>
           ))}
         </ul>
       </div>
@@ -28,13 +23,9 @@ export default function quest_bord({ current }) {
   )
 }
 
-export async function getStaticProps() {
-  const date = new Date()
-  const current = date.toLocaleString()
+export async function getServerSideProps() {
+  const posts = await getAllPostsData()
   return {
-    props: {
-      current,
-    },
-    revalidate: 5,
+    props: { posts },
   }
 }
