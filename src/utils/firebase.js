@@ -19,6 +19,8 @@ if (firebase.apps.length === 0) {
 // const db = firebaseApp.firestore()
 const auth = firebase.auth()
 const storage = firebase.storage()
-const provider = new firebase.auth.GoogleAuthProvider()
+const google = new firebase.auth.GoogleAuthProvider()
+const twitter = new firebase.auth.TwitterAuthProvider()
+const github = new firebase.auth.GithubAuthProvider()
 
-export { auth, storage, provider }
+export { auth, storage, google, twitter, github }
