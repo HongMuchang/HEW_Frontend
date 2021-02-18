@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
 import bordReducer from './features/bord/bordSlice'
-import counterReducer from './features/counter/counterSlice'
+import userrReducer from './features/user/userSlice'
 export default configureStore({
   reducer: {
-    counter: counterReducer,
+    user: userrReducer,
     bord: bordReducer,
   },
 })
