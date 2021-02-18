@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import styles from './Auth.module.scss'
-import { auth, provider, storage } from '../../utils/firebase'
+import { auth, storage, google, twitter, github } from '../../utils/firebase'
 
 import {
   Avatar,
@@ -59,7 +59,13 @@ export default function Auth() {
   }
   //Google
   const signInGoogle = async () => {
-    await auth.signInWithPopup(provider).catch((err) => alert(err.message))
+    await auth.signInWithPopup(google).catch((err) => alert(err.message))
+  }
+  const signInTwitter = async () => {
+    await auth.signInWithPopup(twitter).catch((err) => alert(err.message))
+  }
+  const signInGithub = async () => {
+    await auth.signInWithPopup(github).catch((err) => alert(err.message))
   }
 
   return (
@@ -146,6 +152,12 @@ export default function Auth() {
           {/* --------google--------*/}
           <Button fullWidth variant="contained" color="primary" className={classes.submit} onClick={signInGoogle}>
             Google
+          </Button>
+          <Button fullWidth variant="contained" color="primary" className={classes.submit} onClick={signInTwitter}>
+            Twitter
+          </Button>
+          <Button fullWidth variant="contained" color="primary" className={classes.submit} onClick={signInGithub}>
+            Github
           </Button>
         </form>
       </div>
