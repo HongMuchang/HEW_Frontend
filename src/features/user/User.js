@@ -3,7 +3,7 @@
 // import { decrement, increment, incrementByAmount, incrementAsync, selectCount } from './counterSlice'
 
 // export default function Counter() {
-//   const count = useSelector(selectCount)
+//   const count = useSelector(selectC33 ount)
 //   const dispatch = useDispatch()
 //   const [incrementAmount, setIncrementAmount] = useState('2')
 
