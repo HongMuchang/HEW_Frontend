@@ -19,6 +19,7 @@
     "file-loader": "^6.2.0",
     "firebase": "^8.2.7",
     "next": "10.0.4",
+    "node-fetch": "^2.6.1",
     "postcss": "^8.2.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
