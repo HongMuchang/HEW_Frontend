@@ -5,6 +5,7 @@ import { createBord, getBordCounts, pushBord, resetBord } from './bordSlice'
 import { selectUser } from '../user/userSlice'
 import { FrontIcon, BackIcon, InfraIcon } from './../../components/parts/icons/index'
 import { Title, Modal } from '../../components/parts/index'
+import axios from 'axios'
 import {
   Radio,
   RadioGroup,
@@ -51,6 +52,19 @@ export default function Bord() {
   const postQuest = () => {
     dispatch(getBordCounts(1))
     dispatch(pushBord(bords))
+    // ------------axios使ってます。----------------
+    axios
+      .post('http://localhost:60001/user/get', {
+        firstName: 'Mineo',
+        lastName: 'Okuda',
+      })
+      .then(function (response) {
+        console.log(response)
+      })
+      .catch(function (error) {
+        console.log(error)
+      })
+    // ------------------------------------------
     dispatch(resetBord(user_masterid.user.uid))
     alert('追加完了しました。')
   }
