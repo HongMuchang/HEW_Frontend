@@ -54,9 +54,9 @@ export default function Bord() {
     dispatch(pushBord(bords))
     // ------------axios使ってます。----------------
     axios
-      .post('http://localhost:60001/user/get', {
-        firstName: 'Mineo',
-        lastName: 'Okuda',
+      .post('http://localhost:60001/user/create', {
+        uid: '300',
+        name: 'ランドセル',
       })
       .then(function (response) {
         console.log(response)
