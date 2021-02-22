@@ -18,6 +18,13 @@ const initialState = {
     reword: 1,
     msg: '',
     position: 1,
+    totalMenber: 1,
+    members: [
+      { uid: 'sadadsadsasa', position: '1' },
+      { uid: 'sadadsadsasa', position: '1' },
+      { uid: 'sadadsadsasa', position: '1' },
+      { uid: 'sadadsadsasa', position: '1' },
+    ],
   },
 }
 
