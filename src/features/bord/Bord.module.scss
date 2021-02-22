@@ -29,10 +29,14 @@
   }
   //------left------//
   .bord_left{
-    width: 40%;
+    width: 50%;
 
     .content{
       padding-top: 30px;
+    }
+    @include mq(md) {
+      width: 300px;
+      margin: 0 auto;
     }
     .radio{
       display: block;
@@ -72,12 +76,18 @@
         &:hover{
           opacity: 0.6;
         }
+        @include mq(md) {
+          
+          
+        }    
       }
       .content{
-        padding-top: 30px;
-
-        
+        padding-top: 30px;        
       }
+      @include mq(md) {
+        width: 300px;
+        margin: 0 auto;
+      }      
     }  
     .content_radio{
       padding-top: 13px;
