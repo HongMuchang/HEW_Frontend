@@ -5,7 +5,7 @@ import Footer from '../Footer/Footer'
 import NavLink from './NavLink'
 import styles from './Layout.module.scss'
 
-export const Layout = ({ children, title = 'HP by Nextjs' }) => {
+export const Layout = ({ children, title = 'HP by Nextjs', name = { name } }) => {
   return (
     <div>
       <Head>
@@ -43,11 +43,6 @@ export const Layout = ({ children, title = 'HP by Nextjs' }) => {
             <Link href="/contact-page">
               <a className={styles.block}>
                 <NavLink name="参加中のボード" />
-              </a>
-            </Link>
-            <Link href="/contact-page">
-              <a className={styles.block}>
-                <NavLink name="ログアウト" />
               </a>
             </Link>
           </nav>
