@@ -23,6 +23,7 @@ export default function Bord() {
   const bordCount = useSelector((state) => state.bord.bordCount) //今まで追加された数
   const user_masterid = useSelector((state) => state.user) //今まで追加された数
 
+  const [id, setId] = useState(bordCount)
   const [title, setTitle] = useState('')
   const [event_day, setEvent_day] = useState('')
   const [day, setDay] = useState('')
@@ -54,9 +55,19 @@ export default function Bord() {
     dispatch(pushBord(bords))
     // ------------axios使ってます。----------------
     axios
-      .post('http://localhost:60001/user/create', {
-        uid: '300',
-        name: 'ランドセル',
+      .post('http://localhost:60002/recruit/create', {
+        id: bordCount,
+        master_id: '22',
+        title: title,
+        event_day: event_day,
+        day: day,
+        origanizer: origanizer,
+        commit: commit,
+        Beginer: Beginer,
+        reword: reword,
+        msg: msg,
+        position: position,
+        uid: 'dskjkvんdjskんvfj',
       })
       .then(function (response) {
         console.log(response)
@@ -124,27 +135,27 @@ export default function Bord() {
             {/* ------Commit------- */}
             <div>
               <FormControl component="fieldset" className={styles.content_radio}>
-                <Title name={'フルコミット'} />
+                <Title name={'1日のコミット時間'} />
                 <RadioGroup aria-label="gender" name="position" className={styles.radio}>
                   <FormControlLabel
                     control={<Radio />}
-                    label="可"
-                    value="OK"
+                    label="1〜3"
+                    value="1〜3"
                     onChange={(e) => setCommit(e.target.value)}
                     checked={commit === 'OK'}
                   />
                   <FormControlLabel
                     control={<Radio />}
-                    label="不"
-                    value="NG"
+                    label="4〜6"
+                    value="4〜6"
                     onChange={(e) => setCommit(e.target.value)}
                     checked={commit === 'NG'}
                   />
 
                   <FormControlLabel
                     control={<Radio />}
-                    label="未"
-                    value="null"
+                    label="6〜9"
+                    value="6〜9"
                     onChange={(e) => setCommit(e.target.value)}
                     checked={commit === 'null'}
                   />
