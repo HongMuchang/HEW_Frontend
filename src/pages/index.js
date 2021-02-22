@@ -6,7 +6,9 @@ import { selectUser, login, logout } from '../features/user/userSlice'
 import { auth } from '../utils/firebase'
 import axios from 'axios'
 import Login from './login'
-
+import iconImg from '../../public/icon.png'
+import Image from 'next/image'
+import { Img } from '../components/parts/index'
 export default function Home() {
   const user = useSelector(selectUser)
   const user_uid = user.payload.user.user.uid
@@ -41,17 +43,6 @@ export default function Home() {
       } else {
         dispatch(logout())
         console.log('ログアウト')
-        console.log(uid)
-        // axios
-        //   .put('http://localhost:60001/user/login-switching', {
-        //     uid: 'gCv0JDKI83XbyYIrOVl5JO2oC733',
-        //   })
-        //   .then(function (response) {
-        //     console.log(response)
-        //   })
-        //   .catch(function (error) {
-        //     console.log(error)
-        //   })
       }
     })
     return () => {
@@ -68,7 +59,8 @@ export default function Home() {
       ) : (
         <Layout title="Guild Hack">
           <LogoutBtn />
-          <p>{id.displayName}</p>
+        <img src={"../../public/frontend.png"} />
+            <p>{id.displayName}</p>
         </Layout>
       )}
     </div>
