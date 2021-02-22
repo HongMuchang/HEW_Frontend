@@ -7,7 +7,7 @@ import FormControl from '@material-ui/core/FormControl'
 import Select from '@material-ui/core/Select'
 import IconsList from '../parts/IconsList'
 import CheckBox from '../parts/CheckBox'
-
+import { Radio, RadioGroup, FormControlLabel, NativeSelect } from '@material-ui/core'
 export default function PostQuestCard() {
   return (
     <div className={styles.bords}>
@@ -19,23 +19,21 @@ export default function PostQuestCard() {
           <TextField id="date" label="開催日" type="date" defaultValue={'2017-05-24'} />
 
           <FormControl>
-            <InputLabel id="demo-customized-select-label" className={styles.bord_time}>
-              日数
-            </InputLabel>
-            <Select
-              labelId="demo-customized-select-label"
-              id="demo-customized-select"
-              className={styles.bord_time_select}
-            >
-              <MenuItem value="">
-                <em>未定</em>
-              </MenuItem>
-              {count.map((i) => (
-                <MenuItem key={i} value={i}>
-                  {i}
-                </MenuItem>
-              ))}
-            </Select>
+            <InputLabel htmlFor="demo-customized-select-native">開催期間</InputLabel>
+            <NativeSelect id="demo-customized-select-native" value={'2'} onChange={(e) => setDay(e.target.value)}>
+              <option aria-label="None" value="" />
+              <option value={1}>1日</option>
+              <option value={2}>2日</option>
+              <option value={3}>3日</option>
+              <option value={4}>4日</option>
+              <option value={5}>5日</option>
+              <option value={6}>6日</option>
+              <option value={7}>7日</option>
+              <option value={8}>8日</option>
+              <option value={9}>9日</option>
+              <option value={10}>10日</option>
+              <option value={999}>それ以上</option>
+            </NativeSelect>
           </FormControl>
         </div>
         <div className={styles.bord_text_area}>
