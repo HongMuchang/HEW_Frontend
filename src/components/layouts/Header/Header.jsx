@@ -6,17 +6,25 @@ import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
+import LogoutBtn from '../../auth/LogoutBtn'
+import { auth } from '../../../utils/firebase'
 
 export default function Header() {
+  const id = auth.currentUser
   return (
     <header className={styles.container}>
       <Toolbar>
         <IconButton edge="start" color="inherit" aria-label="menu">
           <MenuIcon className={styles.menuber} />
         </IconButton>
+
         <p className={styles.header_title}>
-          <span>G</span>uild Hack
+          <span>G</span>uild Hack
         </p>
+        <div className={styles.flex}>
+          <p className={styles.name}>{id.displayName}様</p>
+          <LogoutBtn />
+        </div>
       </Toolbar>
     </header>
   )
