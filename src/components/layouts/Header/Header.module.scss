@@ -7,6 +7,15 @@
   background-color:#776f66;
   box-shadow: 0 3px 4px rgb(68, 68, 68);
   
+    .flex{
+      display: flex;
+      
+      .name{
+        color: white;
+        padding-right: 10px;
+      }
+
+    }
     .menuber{
       display: none;
       @include mq(md) {
@@ -20,6 +29,7 @@
     text-align: center;
     color: rgb(232, 228, 228);
     margin: 0 auto;
+    padding-left: 12vw;
     @include mq(md) {
       padding-right: 5vw;
     }
