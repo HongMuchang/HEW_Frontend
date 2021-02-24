@@ -22,7 +22,10 @@ export default function Header() {
           <span>G</span>uild Hack
         </p>
         <div className={styles.flex}>
-          <p className={styles.name}>{id.displayName}様</p>
+          <p className={styles.name}>
+            {/* { id.displayName }様 */}
+            nanasi
+          </p>
           <LogoutBtn />
         </div>
       </Toolbar>
