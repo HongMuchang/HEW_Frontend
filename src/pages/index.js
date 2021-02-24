@@ -6,6 +6,7 @@ import { selectUser, login, logout } from '../features/user/userSlice'
 import { auth } from '../utils/firebase'
 import axios from 'axios'
 import Login from './login'
+import styles from './index.module.scss'
 
 export default function Home() {
   const user = useSelector(selectUser)
@@ -52,8 +53,8 @@ export default function Home() {
       {id == null ? (
         <Login />
       ) : (
-        <Layout title="Guild Hack" name={id.displayName}>
-          <img src={'./icon.png'} width={200} heigth={200} />
+        <Layout title="Guild Hack">
+          <img src={'./top_header4.png'} width={800} className={styles.header_logo} />
         </Layout>
       )}
     </div>
