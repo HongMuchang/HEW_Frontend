@@ -5,13 +5,14 @@ import Footer from '../Footer/Footer'
 import NavLink from './NavLink'
 import styles from './Layout.module.scss'
 
-export const Layout = ({ children, title = 'HP by Nextjs', name = { name } }) => {
+export const Layout = ({ children, title = 'HP by Nextjs' }) => {
   return (
     <div>
       <Head>
         <title>{title}</title>
       </Head>
       <Header />
+
       <main className={styles.main}>
         <div className={styles.main_left}>
           <nav>
