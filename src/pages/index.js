@@ -6,14 +6,11 @@ import { selectUser, login, logout } from '../features/user/userSlice'
 import { auth } from '../utils/firebase'
 import axios from 'axios'
 import Login from './login'
-import iconImg from '../../public/icon.png'
-import Image from 'next/image'
-import { Img } from '../components/parts/index'
+import styles from './index.module.scss'
+
 export default function Home() {
   const user = useSelector(selectUser)
-  const user_uid = user.payload.user.user.uid
   const dispatch = useDispatch()
-  const [uid, setUid] = useState('')
 
   useEffect(() => {
     //authUserは現在ログインしてる人の情報
@@ -26,7 +23,6 @@ export default function Home() {
             disPlayName: authUser.displayName,
           })
         )
-        setUid(authUser.uid)
         axios
           .post('http://localhost:60001/user/create', {
             uid: authUser.uid,
@@ -58,9 +54,7 @@ export default function Home() {
         <Login />
       ) : (
         <Layout title="Guild Hack">
-          <LogoutBtn />
-        <img src={"../../public/frontend.png"} />
-            <p>{id.displayName}</p>
+          <img src={'./top_header4.png'} width={800} className={styles.header_logo} />
         </Layout>
       )}
     </div>

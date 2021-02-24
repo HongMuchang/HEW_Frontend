@@ -12,6 +12,7 @@ export const Layout = ({ children, title = 'HP by Nextjs' }) => {
         <title>{title}</title>
       </Head>
       <Header />
+
       <main className={styles.main}>
         <div className={styles.main_left}>
           <nav>
@@ -43,11 +44,6 @@ export const Layout = ({ children, title = 'HP by Nextjs' }) => {
             <Link href="/contact-page">
               <a className={styles.block}>
                 <NavLink name="参加中のボード" />
-              </a>
-            </Link>
-            <Link href="/contact-page">
-              <a className={styles.block}>
-                <NavLink name="ログアウト" />
               </a>
             </Link>
           </nav>
