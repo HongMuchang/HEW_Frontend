@@ -2,6 +2,7 @@ import { Layout } from '../../components/layouts/Layout/Layout'
 import { getAllPostIds, getPostData } from '../../../lib/post'
 import Title from '../../components/parts/Title'
 import styles from './quest_bord_id.module.scss'
+import Link from 'next/link'
 
 export default function Post({ post }) {
   if (!post) {
@@ -15,39 +16,78 @@ export default function Post({ post }) {
           <div className={styles.bord_left}>
             <div className={styles.content}>
               <Title name={'クエスト名'} />
-              {/* <p>{post.title}</p> */}
+              <p>{post.title}</p>
             </div>
             <div className={styles.content}>
               <Title name={'開催日'} />
-              {/* <p>{post.startDate}:3日間</p> */}
+              <p>
+                {post.eventDay}　~　{post.day}日間
+              </p>
             </div>
             <div className={styles.content}>
               <Title name={'主催者'} />
-              <p>TechBowl</p>
+              <p>{post.organizer}</p>
             </div>
             <div className={styles.content}>
               <Title name={'コミット時間'} />
-              {/* <p>{post.commitState}時間</p> */}
+              <p>{post.commit}時間</p>
             </div>
             <div className={styles.content}>
               <Title name={'初心者歓迎'} />
-              <p>歓迎</p>
+              <p>{post.beginner}</p>
             </div>
             <div className={styles.content}>
               <Title name={'報酬'} />
-              <p>あり</p>
+              <p>{post.reword}</p>
             </div>
           </div>
           {/* right */}
           <div className={styles.bord_right}>
             <div className={styles.content}>
               <Title name={'リーダーからの一言'} val={post.title} />
-              <p>全力で頑張りましょう</p>
+              <p>{post.message}</p>
             </div>
             <div className={styles.content}>
-              <Title name={'メンバー'} val={post.title} />
-              {/* <p>{post.totalMember}</p> */}
-              <p>全力で頑張りましょう</p>
+              <Title name={'メンバー'} />
+              <table border="2">
+                <tr>
+                  <td>
+                    <img src={'../bg_infra.png'} />
+                  </td>
+                  <td>
+                    <img src={'../bg_frontend.png'} />
+                  </td>
+                  <td>
+                    <img src={'../bg_backend.png'} />
+                  </td>
+                  <td>
+                    <img src={'../bg_backend.png'} />
+                  </td>
+                  <td>
+                    <img src={'../bg_backend.png'} />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <img src={'../bg_frontend.png'} />
+                  </td>
+                  <td>
+                    <img src={'../bg_frontend.png'} />
+                  </td>
+                  <td>
+                    <img src={'../bg_backend.png'} />
+                  </td>
+                  <td>
+                    <img src={'../bg_backend.png'} />
+                  </td>
+                  <td>
+                    <img src={'../bg_infra.png'} />
+                  </td>
+                </tr>
+              </table>
+              <Link href={`/quest_bord/${post.id}/entry`} post={post}>
+                  <a>参加する</a>
+              </Link>
             </div>
           </div>
         </div>
@@ -58,7 +98,6 @@ export default function Post({ post }) {
 
 export async function getStaticPaths() {
   const paths = await getAllPostIds()
-
   return {
     paths,
     fallback: false,
