@@ -139,25 +139,25 @@ export default function Bord() {
                 <RadioGroup aria-label="gender" name="position" className={styles.radio}>
                   <FormControlLabel
                     control={<Radio />}
-                    label="1〜3"
-                    value="1〜3"
+                    label="1〜4"
+                    value="1〜4"
                     onChange={(e) => setCommit(e.target.value)}
-                    checked={commit === 'OK'}
+                    checked={commit === '1〜4'}
                   />
                   <FormControlLabel
                     control={<Radio />}
-                    label="4〜6"
-                    value="4〜6"
+                    label="4〜8"
+                    value="4〜8"
                     onChange={(e) => setCommit(e.target.value)}
-                    checked={commit === 'NG'}
+                    checked={commit === '4〜8'}
                   />
 
                   <FormControlLabel
                     control={<Radio />}
-                    label="6〜9"
-                    value="6〜9"
+                    label="max"
+                    value="max"
                     onChange={(e) => setCommit(e.target.value)}
-                    checked={commit === 'null'}
+                    checked={commit === 'max'}
                   />
                 </RadioGroup>
               </FormControl>
