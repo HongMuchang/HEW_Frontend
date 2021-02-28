@@ -3,14 +3,14 @@ import { getAllPostIds, getPostData } from '../../../lib/post'
 import Title from '../../components/parts/Title'
 import styles from './quest_bord_id.module.scss'
 import Link from 'next/link'
+import Entry from './[id]/entry'
 
 export default function Post({ post }) {
   if (!post) {
     return <div>Loading...</div>
   }
-  console.log(post)
   return (
-    <Layout>
+    <Layout title="クエストボード画面">
       <div className={styles.bords}>
         <div className={styles.bord}>
           <div className={styles.bord_left}>
@@ -86,7 +86,9 @@ export default function Post({ post }) {
                 </tr>
               </table>
               <Link href={`/quest_bord/${post.id}/entry`} post={post}>
+                <div>
                   <a>参加する</a>
+                </div>
               </Link>
             </div>
           </div>

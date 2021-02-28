@@ -5,7 +5,7 @@ export default function post_quest_bord() {
   // const var user = firebase.auth().currentUser;
 
   return (
-    <Layout title="Guild Hack">
+    <Layout title="クエスト募集画面">
       <Bord />
     </Layout>
   )
