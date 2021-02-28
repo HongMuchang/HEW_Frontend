@@ -7,14 +7,14 @@ import Link from 'next/link'
 export default function quest_bord({ posts }) {
   console.log(posts)
   return (
-    <Layout title="Guild Hack">
+    <Layout title="クエスト一覧画面">
       <div className={styles.bords}>
         <h1>quest_board</h1>
         <ul>
           {posts.map((post) => (
             <Link href={`/quest_bord/${post.id}`}>
               <li key={post}>
-                <QuestCard title={post.title} contact={post.body} time={post.id} />
+                <QuestCard title={post.title} contact={post.body} time={post.updated} />
               </li>
             </Link>
           ))}
