@@ -23,7 +23,6 @@ export default function Header() {
         <IconButton edge="start" color="inherit" aria-label="menu">
           <MenuIcon className={styles.menuber} onClick={() => change()} />
         </IconButton>
-        {open && <p>っっっっっっっっっっっっっっっっっっっっっk</p>}
         <p className={styles.header_title}>
           <span>G</span>uild Hack
         </p>
