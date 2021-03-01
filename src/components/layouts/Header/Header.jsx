@@ -1,5 +1,5 @@
 import styles from './Header.module.scss'
-import React from 'react'
+import React, { useState } from 'react'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
@@ -10,14 +10,20 @@ import LogoutBtn from '../../auth/LogoutBtn'
 import { auth } from '../../../utils/firebase'
 
 export default function Header() {
+  const [open, setOpen] = useState(false)
+
+  const change = () => {
+    setOpen(!open)
+  }
+
   const id = auth.currentUser
   return (
     <header className={styles.container}>
       <Toolbar>
         <IconButton edge="start" color="inherit" aria-label="menu">
-          <MenuIcon className={styles.menuber} />
+          <MenuIcon className={styles.menuber} onClick={() => change()} />
         </IconButton>
-
+        {open && <p>っっっっっっっっっっっっっっっっっっっっっk</p>}
         <p className={styles.header_title}>
           <span>G</span>uild Hack
         </p>
