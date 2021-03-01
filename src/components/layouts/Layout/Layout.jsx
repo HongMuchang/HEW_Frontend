@@ -12,7 +12,6 @@ export const Layout = ({ children, title = 'HP by Nextjs' }) => {
         <title>{title}</title>
       </Head>
       <Header />
-
       <main className={styles.main}>
         <div className={styles.main_left}>
           <nav>
