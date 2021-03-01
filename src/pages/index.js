@@ -47,7 +47,7 @@ export default function Home() {
   }, [])
 
   const id = auth.currentUser
-  console.log(id)
+
   return (
     <div>
       {id == null ? (
