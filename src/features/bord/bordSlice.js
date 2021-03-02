@@ -18,7 +18,6 @@ const initialState = {
     reword: 1,
     msg: '',
     position: 1,
-    totalMenber: 1,
     members: [
       { uid: 'sadadsadsasa', position: '1' },
       { uid: 'sadadsadsasa', position: '1' },
@@ -38,6 +37,7 @@ export const bordSlice = createSlice({
       bord.id = action.payload.id + 1
       bord.master_id = action.payload.master_id
       bord.title = action.payload.title
+      bord.totalMember = action.payload.totalMember
       bord.day = action.payload.day
       bord.event_day = action.payload.event_day
       bord.origanizer = action.payload.origanizer
