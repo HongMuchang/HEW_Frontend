@@ -63,7 +63,7 @@ export default function Bord() {
         title: title,
         eventDay: event_day,
         day: day,
-        totalMember: "3",
+        totalMember: '3',
         organizer: origanizer,
         commit: commit,
         Beginer: Beginer,
