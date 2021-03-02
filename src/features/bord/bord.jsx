@@ -23,10 +23,10 @@ export default function Bord() {
   const bordCount = useSelector((state) => state.bord.bordCount) //今まで追加された数
   const user_masterid = useSelector((state) => state.user) //今まで追加された数
 
-  const [id, setId] = useState(bordCount)
   const [title, setTitle] = useState('')
   const [event_day, setEvent_day] = useState('')
   const [day, setDay] = useState('')
+  const [totalMember, setTotalMember] = useState('')
   const [origanizer, setOriganizer] = useState('')
   const [commit, setCommit] = useState('')
   const [Beginer, setBeginer] = useState('')
@@ -34,11 +34,13 @@ export default function Bord() {
   const [msg, setMsg] = useState('')
   const [position, setPosition] = useState('frontend')
 
+  console.log(user_masterid.user.uid)
   dispatch(
     createBord({
       id: bordCount,
       master_id: user_masterid.user.uid,
       title: title,
+      totalMember: totalMember,
       event_day: event_day,
       day: day,
       origanizer: origanizer,
@@ -57,17 +59,17 @@ export default function Bord() {
     axios
       .post('http://localhost:60002/recruit/create', {
         id: bordCount,
-        master_id: '22',
+        masterId: user_masterid.user.uid,
         title: title,
-        event_day: event_day,
+        eventDay: event_day,
         day: day,
-        origanizer: origanizer,
+        totalMember: "3",
+        organizer: origanizer,
         commit: commit,
         Beginer: Beginer,
         reword: reword,
-        msg: msg,
+        message: msg,
         position: position,
-        uid: 'dskjkvんdjskんvfj',
       })
       .then(function (response) {
         console.log(response)
@@ -118,6 +120,26 @@ export default function Bord() {
                 <option value={9}>9日</option>
                 <option value={10}>10日</option>
                 <option value={999}>それ以上</option>
+              </NativeSelect>
+            </FormControl>
+            <FormControl>
+              <InputLabel htmlFor="demo-customized-select-native">募集人数</InputLabel>
+              <NativeSelect
+                id="demo-customized-select-native"
+                value={totalMember}
+                onChange={(e) => setTotalMember(e.target.value)}
+              >
+                <option aria-label="None" value="" />
+                <option value={1}>1人</option>
+                <option value={2}>2人</option>
+                <option value={3}>3人</option>
+                <option value={4}>4人</option>
+                <option value={5}>5人</option>
+                <option value={6}>6人</option>
+                <option value={7}>7人</option>
+                <option value={8}>8人</option>
+                <option value={9}>9人</option>
+                <option value={10}>10人</option>
               </NativeSelect>
             </FormControl>
           </div>

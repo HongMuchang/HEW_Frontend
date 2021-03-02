@@ -1,0 +1,33 @@
+FROM node:14.15.4 as builder
+
+ARG FIREBASE_KEY
+ARG FIREBASE_DOMAIN
+ARG FIREBASE_DATABASE
+ARG FIREBASE_PROJECT_ID
+ARG FIREBASE_STORAGE_BUCKET
+ARG FIREBASE_SENDER_ID
+ARG FIREBASE_APPID
+
+ENV FIREBASE_KEY=${FIREBASE_KEY}
+ENV FIREBASE_DOMAIN=${FIREBASE_DOMAIN}
+ENV FIREBASE_DATABASE=${FIREBASE_DATABASE}
+ENV FIREBASE_PROJECT_ID=${FIREBASE_PROJECT_ID}
+ENV FIREBASE_STORAGE_BUCKET=${FIREBASE_STORAGE_BUCKET}
+ENV FIREBASE_SENDER_ID=${FIREBASE_SENDER_ID}
+ENV FIREBASE_APPID=${FIREBASE_APPID}
+
+RUN apt -y update && apt -y install libvips-dev
+RUN yarn add sharp
+COPY . /build
+WORKDIR /build
+RUN yarn install && yarn build
+
+FROM node:14.15.4-alpine
+WORKDIR /app
+COPY --from=builder /build/package.json /build/yarn.lock ./
+COPY --from=builder /build/.next ./.next
+COPY --from=builder /build/public ./public
+RUN yarn add next
+
+EXPOSE 80
+CMD ["yarn", "start"]

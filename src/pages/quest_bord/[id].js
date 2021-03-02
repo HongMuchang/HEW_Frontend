@@ -6,6 +6,18 @@ import Link from 'next/link'
 import Entry from './[id]/entry'
 
 export default function Post({ post }) {
+  const ary = []
+
+  for (let i = 0; i < post.totalMember; i++) {
+    if (post.members[i] == undefined) {
+      ary.push('no')
+    } else {
+      ary.push(post.members[i].position)
+    }
+  }
+
+  console.log(ary)
+
   if (!post) {
     return <div>Loading...</div>
   }
@@ -49,42 +61,11 @@ export default function Post({ post }) {
             </div>
             <div className={styles.content}>
               <Title name={'メンバー'} />
-              <table border="2">
-                <tr>
-                  <td>
-                    <img src={'../bg_infra.png'} />
-                  </td>
-                  <td>
-                    <img src={'../bg_frontend.png'} />
-                  </td>
-                  <td>
-                    <img src={'../bg_backend.png'} />
-                  </td>
-                  <td>
-                    <img src={'../bg_backend.png'} />
-                  </td>
-                  <td>
-                    <img src={'../bg_backend.png'} />
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <img src={'../bg_frontend.png'} />
-                  </td>
-                  <td>
-                    <img src={'../bg_frontend.png'} />
-                  </td>
-                  <td>
-                    <img src={'../bg_backend.png'} />
-                  </td>
-                  <td>
-                    <img src={'../bg_backend.png'} />
-                  </td>
-                  <td>
-                    <img src={'../bg_infra.png'} />
-                  </td>
-                </tr>
-              </table>
+              <ul>
+                {ary.map((a, index) => (
+                  <li>{a}</li>
+                ))}
+              </ul>
               <Link href={`/quest_bord/${post.id}/entry`} post={post}>
                 <div>
                   <a>参加する</a>
