@@ -11,7 +11,6 @@ import { auth } from '../../../utils/firebase'
 
 export default function Header() {
   const [open, setOpen] = useState(false)
-
   const change = () => {
     setOpen(!open)
   }
@@ -27,10 +26,7 @@ export default function Header() {
           <span>G</span>uild Hack
         </p>
         <div className={styles.flex}>
-          <p className={styles.name}>
-            {/* { id.displayName }様 */}
-            nanasi
-          </p>
+          <p className={styles.name}>{id != null ? id.displayName : '名無し'} 様</p>
           <LogoutBtn />
         </div>
       </Toolbar>
