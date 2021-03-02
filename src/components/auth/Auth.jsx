@@ -70,7 +70,6 @@ export default function Auth() {
 
   return (
     <div>
-      <h1>こんいちは</h1>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>
