@@ -2,7 +2,9 @@ import React, { useState } from 'react'
 import { Layout } from '../../../components/layouts/Layout/Layout'
 import { getAllPostIds, getPostData } from '../../../../lib/post'
 import styles from '../quest_bord_id.module.scss'
+import { auth } from '../../../utils/firebase'
 import Title from '../../../components/parts/Title'
+import axios from 'axios'
 import { FrontIcon, BackIcon, InfraIcon } from './../../../components/parts/icons'
 import {
   Radio,
@@ -16,27 +18,16 @@ import {
 
 export default function Entry({ post }) {
   const [position, setPosition] = useState('frontend')
-  console.log('sfdsfdsfdsfdsfd')
-  console.log(post)
+  console.log(post.id)
+
+  const id = auth.currentUser
 
   const postQuest = () => {
-    dispatch(getBordCounts(1))
-    dispatch(pushBord(bords))
     // ------------axios使ってます。----------------
     axios
-      .post('http://localhost:60002/recruit/create', {
-        id: bordCount,
-        master_id: '22',
-        title: title,
-        event_day: event_day,
-        day: day,
-        origanizer: origanizer,
-        commit: commit,
-        Beginer: Beginer,
-        reword: reword,
-        msg: msg,
+      .put(`http://localhost:60002/recruit/${post.id}/members`, {
+        uid: id.uid,
         position: position,
-        uid: 'dskjkvんdjskんvfj',
       })
       .then(function (response) {
         console.log(response)
@@ -45,7 +36,6 @@ export default function Entry({ post }) {
         console.log(error)
       })
     // ------------------------------------------
-    dispatch(resetBord(user_masterid.user.uid))
     alert('追加完了しました。')
   }
 
