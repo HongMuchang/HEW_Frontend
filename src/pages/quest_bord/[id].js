@@ -3,7 +3,6 @@ import { getAllPostIds, getPostData } from '../../../lib/post'
 import Title from '../../components/parts/Title'
 import styles from './quest_bord_id.module.scss'
 import Link from 'next/link'
-import Entry from './[id]/entry'
 
 export default function Post({ post }) {
   const ary = []
