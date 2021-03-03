@@ -1,22 +1,39 @@
-.login_toggleMode {
-  cursor: pointer;
-  color: #0000ff;
-}
-.login_modal {
-  text-align: center;
-}
-.login_reset {
-  cursor: pointer;
-}
-.login_hiddenIcon {
-  text-align: center;
-  display: none;
-}
-.login_addIcon {
-  cursor: pointer;
-  color: gray;
-}
-.login_addIconLoaded {
-  cursor: pointer;
-  color: whitesmoke;
+.container{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-image: url('../../../public/bord.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+
+  .content{
+    width: 60%;
+    height: 70vh;
+    margin: 15vh;
+  
+    .title{
+    text-align: center;
+    font-size: 50px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+
+
+  .google{
+    color: white;
+    background-color: #ef5350;
+    margin-bottom: 20px;
+  }
+  .twitter{
+    color: white;
+    background-color: #64b5f6;
+    margin-bottom: 20px;
+  }
+  .github{
+    color: white;
+    background-color:black;
+    margin-bottom: 20px;
+  }
+  }
 }

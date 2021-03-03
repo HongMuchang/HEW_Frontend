@@ -1,6 +1,14 @@
 @import '../../../styles/variables';
 
-.bords {
+.bords{
   padding-bottom: 50px;
   background-image: url('../../../public/bord_image.jpg');
+  height: auto;
+  display: flex;
+  justify-content: center;
+  
+
+  .a{
+    padding: 20px 0px;
+  }
 }

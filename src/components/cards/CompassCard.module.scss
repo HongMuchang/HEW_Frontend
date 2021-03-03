@@ -1,0 +1,47 @@
+@import '../../../styles/variables';
+
+//クエスト一覧の画像
+.bord{
+  
+  width: min(80vw,800px);
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-image: url('../../../public/bord.jpg');
+  background-repeat: repeat;
+  background-size: cover;
+  background-position: center center;
+
+  .bord_content{
+    display: flex;
+    justify-content: space-around;
+    .img{
+      width: 30%;
+    }
+
+    .right{
+      width: 50%;
+      
+      .title{
+        font-size: 15px;
+        padding-bottom: 15px;
+      }
+
+      .links{
+        display: flex;
+
+        .bord_time{
+          font-size: 20px;
+        }
+        .link{
+          text-align: right;
+          padding: 3px;
+          color: rgb(255, 255, 255);
+          background-color: rgb(31, 82, 211);
+          border-radius: 3px;
+          margin-left: 30px;
+        }
+      }
+    }
+  }
+
+}

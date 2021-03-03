@@ -70,22 +70,26 @@ export default function Auth() {
 
   return (
     <div>
-      <Container component="main" maxWidth="xs">
-        <CssBaseline />
-        <div className={classes.paper}>
-          <form className={classes.form} noValidate>
-            <Button fullWidth variant="contained" color="primary" className={classes.submit} onClick={signInGoogle}>
-              Google
-            </Button>
-            <Button fullWidth variant="contained" color="primary" className={classes.submit} onClick={signInTwitter}>
-              Twitter
-            </Button>
-            <Button fullWidth variant="contained" color="primary" className={classes.submit} onClick={signInGithub}>
-              Github
-            </Button>
-          </form>
+      <div className={styles.container}>
+        <div className={styles.content}>
+          <h1 className={styles.title}>Login</h1>
+          <Container component="main" maxWidth="xs">
+            <div className={classes.paper}>
+              <form className={classes.form} noValidate>
+                <Button fullWidth variant="contained" className={styles.google} onClick={signInGoogle}>
+                  Google
+                </Button>
+                <Button fullWidth variant="contained" className={styles.twitter} onClick={signInTwitter}>
+                  Twitter
+                </Button>
+                <Button fullWidth variant="contained" className={styles.github} onClick={signInGithub}>
+                  Github
+                </Button>
+              </form>
+            </div>
+          </Container>
         </div>
-      </Container>
+      </div>
     </div>
   )
 }

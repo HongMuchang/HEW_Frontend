@@ -4,6 +4,7 @@ import { Header } from '../Header'
 import Footer from '../Footer/Footer'
 import NavLink from './NavLink'
 import styles from './Layout.module.scss'
+import LogoutBtn from '../../auth/LogoutBtn'
 
 export const Layout = ({ children, title = 'HP by Nextjs' }) => {
   return (
@@ -12,6 +13,7 @@ export const Layout = ({ children, title = 'HP by Nextjs' }) => {
         <title>{title}</title>
       </Head>
       <Header />
+
       <main className={styles.main}>
         <div className={styles.main_left}>
           <nav>
@@ -30,9 +32,9 @@ export const Layout = ({ children, title = 'HP by Nextjs' }) => {
                 <NavLink name="クエスト募集" />
               </a>
             </Link>
-            <Link href="/contact-page">
+            <Link href="/compass_bord">
               <a className={styles.block}>
-                <NavLink name="開催中のボード" />
+                <NavLink name="Compass ボード" />
               </a>
             </Link>
             <Link href="/contact-page">
@@ -45,6 +47,7 @@ export const Layout = ({ children, title = 'HP by Nextjs' }) => {
                 <NavLink name="参加中のボード" />
               </a>
             </Link>
+            <LogoutBtn />
           </nav>
         </div>
         <div className={styles.main_right}>{children}</div>

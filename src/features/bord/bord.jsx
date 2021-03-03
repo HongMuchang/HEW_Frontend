@@ -57,13 +57,13 @@ export default function Bord() {
     dispatch(pushBord(bords))
     // ------------axios使ってます。----------------
     axios
-      .post('http://localhost:60002/recruit/create', {
+      .post('http://localhost:60002/recruits', {
         id: bordCount,
         masterId: user_masterid.user.uid,
         title: title,
         eventDay: event_day,
         day: day,
-        totalMember: "3",
+        totalMember: '3',
         organizer: origanizer,
         commit: commit,
         Beginer: Beginer,
@@ -122,12 +122,15 @@ export default function Bord() {
                 <option value={999}>それ以上</option>
               </NativeSelect>
             </FormControl>
-            <FormControl>
-              <InputLabel htmlFor="demo-customized-select-native">募集人数</InputLabel>
+            <FormControl className={styles.member_border}>
+              <InputLabel htmlFor="demo-customized-select-native" className={styles.member}>
+                募集人数
+              </InputLabel>
               <NativeSelect
                 id="demo-customized-select-native"
                 value={totalMember}
                 onChange={(e) => setTotalMember(e.target.value)}
+                className={styles.member_border}
               >
                 <option aria-label="None" value="" />
                 <option value={1}>1人</option>
