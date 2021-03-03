@@ -25,7 +25,7 @@ export default function Entry({ post }) {
   const postQuest = () => {
     // ------------axios使ってます。----------------
     axios
-      .put(`http://localhost:60002/recruit/${post.id}/members`, {
+      .put(`http://localhost:60002/recruits/${post.id}/members`, {
         uid: id.uid,
         position: position,
       })
