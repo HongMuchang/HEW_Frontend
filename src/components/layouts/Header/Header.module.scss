@@ -7,38 +7,56 @@
   background-color:#776f66;
   box-shadow: 0 3px 4px rgb(68, 68, 68);
   
-    .flex{
-      display: flex;
-      
-      .name{
-        color: white;
-        padding-right: 10px;
-      }
+  .contnet{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 
-    }
+  .left{
+    width: 20.8%;
+    display: flex;
     .menuber{
       display: none;
       @include mq(md) {
         display: block;
       }
     }
-    
-    
+    .name{
+      color: white;
+      padding-right: 10px;
+      font-weight: bold;
+    }
+  }
+
+  .right{
+    width: 90%;
+    border-left: 1px solid rgb(255, 248, 248);
+    // background-color:#776f66;
+
+    .flex{
+      display: flex;
+
+      .logout{
+        background-color: red;
+      }
+    }
+
     .header_title{
     font-size: 40px;
     text-align: center;
     color: rgb(232, 228, 228);
-    margin: 0 auto;
-    padding-left: 12vw;
-    @include mq(md) {
-      padding-right: 5vw;
-    }
 
+
+    
+    @include mq(md) {
+      // padding-right: 5vw;
+    }
       span{
         color: #D65B5Bed;
         font-weight: lighter;
       }
+      }
     }
   }
-
+}
 
