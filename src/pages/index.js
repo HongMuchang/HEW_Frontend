@@ -24,7 +24,7 @@ export default function Home() {
           })
         )
         axios
-          .post('http://localhost:60001/user/create', {
+          .post('http://localhost:60001/users', {
             uid: authUser.uid,
             name: authUser.displayName,
             isLogin: true,
