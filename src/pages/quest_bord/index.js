@@ -7,10 +7,6 @@ import Login from '../../pages/login'
 import { auth } from '../../utils/firebase'
 
 export default function quest_bord({ posts }) {
-  // if (auth.currentUser == null) {
-  //   return <Login />
-  // }
-
   console.log(posts)
   return (
     <Layout title="クエスト一覧画面">
@@ -19,9 +15,8 @@ export default function quest_bord({ posts }) {
         <ul>
           {posts.map((post) => (
             <Link href={`/quest_bord/${post.id}`}>
-              <li key={post}>
-                {post.id}
-                <QuestCard title={post.title} contact={post.body} time={post.updated} />
+              <li key={post} className={styles.hover}>
+                <QuestCard title={post.title} contact={post.body} time={post.updated} id={post.id} />
               </li>
             </Link>
           ))}
