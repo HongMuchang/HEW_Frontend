@@ -7,7 +7,6 @@ const initialState = {
     id: 0,
   },
   create_bord: {
-    id: 1,
     master_id: 0,
     title: '',
     event_day: '2021-01-01',
@@ -34,7 +33,6 @@ export const bordSlice = createSlice({
     //募集するボードの状態
     createBord: (state, action) => {
       const bord = state.create_bord
-      bord.id = action.payload.id + 1
       bord.master_id = action.payload.master_id
       bord.title = action.payload.title
       bord.totalMember = action.payload.totalMember
