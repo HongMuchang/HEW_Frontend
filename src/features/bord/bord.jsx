@@ -34,20 +34,18 @@ export default function Bord() {
   const [msg, setMsg] = useState('')
   const [position, setPosition] = useState('frontend')
 
-  console.log(user_masterid.user.uid)
   dispatch(
     createBord({
-      id: bordCount,
       master_id: user_masterid.user.uid,
       title: title,
       totalMember: totalMember,
       event_day: event_day,
       day: day,
-      origanizer: origanizer,
+      organizer: origanizer,
       commit: commit,
       Beginer: Beginer,
       reword: reword,
-      msg: msg,
+      message: msg,
       position: position,
     })
   )
@@ -58,12 +56,11 @@ export default function Bord() {
     // ------------axios使ってます。----------------
     axios
       .post('http://localhost:60002/recruits', {
-        id: bordCount,
         masterId: user_masterid.user.uid,
         title: title,
         eventDay: event_day,
         day: day,
-        totalMember: '3',
+        totalMember: totalMember,
         organizer: origanizer,
         commit: commit,
         Beginer: Beginer,
