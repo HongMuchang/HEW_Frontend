@@ -2,6 +2,9 @@
 
 //クエスト一覧の画像
 .bord{
+  width: 100%;
+  display: flex;
+  justify-content: center;
   margin:  30px auto;
   border: 2px solid rgba(133, 101, 101, 0.864);
   width: min(650px,95vw);
@@ -11,24 +14,30 @@
   background-size: cover;
   background-position: center center;
 
-  .flex{
-    display: flex;
-    justify-content: space-between;
+  .left{
+    width: 80%;
+
+    .quest{
+      display: flex;
+    }
+    
+    .span{
+      
+
+    }
+
+    .bord_time{
+      display:inline-block;
+      color: rgba(36, 30, 30, 0.515);
+    }
+  
+    .title{
+      font-size:14px;
+    }
   }
 
-  .bord_time{
-    display:inline-block;
-    color: rgba(36, 30, 30, 0.515);
-  }
-  .title{
-    font-size:14px;
-  }
-  .pos{
-    font-size: 12px;
-  }
-  .bord_btn{
-    color: white;
-    background-color: rgb(32, 113, 218);
+  .right{
+    width: 20%;
   }
 
 }
