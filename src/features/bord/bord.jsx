@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import styles from './Bord.module.scss'
 import { useDispatch, useSelector } from 'react-redux'
 import { createBord, getBordCounts, pushBord, resetBord } from './bordSlice'
-import { selectUser } from '../user/userSlice'
 import { FrontIcon, BackIcon, InfraIcon } from './../../components/parts/icons/index'
 import { Title, Modal } from '../../components/parts/index'
 import axios from 'axios'
@@ -32,6 +31,7 @@ export default function Bord() {
   const [Beginer, setBeginer] = useState('')
   const [reword, setReword] = useState('')
   const [msg, setMsg] = useState('')
+  const [slackUrl, setSlackUrl] = useState('')
   const [position, setPosition] = useState('frontend')
 
   dispatch(
@@ -47,6 +47,7 @@ export default function Bord() {
       reword: reword,
       message: msg,
       position: position,
+      slackUrl: slackUrl,
     })
   )
 
@@ -67,6 +68,7 @@ export default function Bord() {
         reword: reword,
         message: msg,
         position: position,
+        slackUrl: slackUrl,
       })
       .then(function (response) {
         console.log(response)
@@ -116,7 +118,7 @@ export default function Bord() {
                 <option value={8}>8日</option>
                 <option value={9}>9日</option>
                 <option value={10}>10日</option>
-                <option value={999}>それ以上</option>
+                <option value={99}>それ以上</option>
               </NativeSelect>
             </FormControl>
             <FormControl className={styles.member_border}>
@@ -195,7 +197,7 @@ export default function Bord() {
                   label="歓"
                   value="OK"
                   onChange={(e) => setReword(e.target.value)}
-                  checked={reword === 'OK'}
+                  checked={reword === 'ok'}
                 />
 
                 <FormControlLabel
@@ -203,14 +205,14 @@ export default function Bord() {
                   label="不"
                   value="NG"
                   onChange={(e) => setReword(e.target.value)}
-                  checked={reword === 'NG'}
+                  checked={reword === 'null'}
                 />
                 <FormControlLabel
                   control={<Radio />}
                   label="どちらでも良い"
                   value="null"
                   onChange={(e) => setReword(e.target.value)}
-                  checked={reword === 'null'}
+                  checked={reword === 'either'}
                 />
               </RadioGroup>
             </FormControl>
@@ -225,21 +227,21 @@ export default function Bord() {
                   label="有"
                   value="OK"
                   onChange={(e) => setBeginer(e.target.value)}
-                  checked={Beginer === 'OK'}
+                  checked={Beginer === 'ok'}
                 />
                 <FormControlLabel
                   control={<Radio />}
                   label="無"
                   value="NG"
                   onChange={(e) => setBeginer(e.target.value)}
-                  checked={Beginer === 'NG'}
+                  checked={Beginer === 'ng'}
                 />
                 <FormControlLabel
                   control={<Radio />}
                   label="未"
                   value="null"
                   onChange={(e) => setBeginer(e.target.value)}
-                  checked={Beginer === 'null'}
+                  checked={Beginer === 'either'}
                 />
               </RadioGroup>
             </FormControl>
@@ -254,6 +256,16 @@ export default function Bord() {
               size="small"
               className={styles.white}
               onChange={(e) => setMsg(e.target.value)}
+            />
+          </div>
+          <div className={styles.content}>
+            <Title name={'Slack URL'} />
+            <TextField
+              id="outlined-basic"
+              variant="outlined"
+              size="small"
+              className={styles.white}
+              onChange={(e) => setSlackUrl(e.target.value)}
             />
           </div>
           {/* ------Position------- */}
