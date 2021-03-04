@@ -53,11 +53,11 @@ export default function Home() {
       {id == null ? (
         <Login />
       ) : (
-          <Layout title="Guild Hack">
-            <div className={styles.contents}>
+        <Layout title="Guild Hack">
+          <div className={styles.contents}>
             <img src={'./top_header3.png'} width={800} className={styles.header_logo} />
-              <p className={styles.title}>Guild Hackとは?</p>
-            </div>
+            <p className={styles.title}>Guild Hackとは?</p>
+          </div>
         </Layout>
       )}
     </div>
