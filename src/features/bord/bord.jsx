@@ -19,17 +19,16 @@ import { Alert, AlertTitle } from '@material-ui/lab'
 export default function Bord() {
   const dispatch = useDispatch()
   const bords = useSelector((state) => state.bord.create_bord) //bordsの配列
-  const bordCount = useSelector((state) => state.bord.bordCount) //今まで追加された数
   const user_masterid = useSelector((state) => state.user) //今まで追加された数
 
   const [title, setTitle] = useState('')
-  const [event_day, setEvent_day] = useState('')
-  const [day, setDay] = useState('')
-  const [totalMember, setTotalMember] = useState('')
+  const [event_day, setEvent_day] = useState('2021-01-01')
+  const [day, setDay] = useState('1')
+  const [totalMember, setTotalMember] = useState('1')
   const [origanizer, setOriganizer] = useState('')
-  const [commit, setCommit] = useState('')
-  const [Beginer, setBeginer] = useState('')
-  const [reword, setReword] = useState('')
+  const [commit, setCommit] = useState('1〜4')
+  const [Beginer, setBeginer] = useState('either')
+  const [reword, setReword] = useState('either')
   const [msg, setMsg] = useState('')
   const [slackUrl, setSlackUrl] = useState('')
   const [position, setPosition] = useState('frontend')
@@ -41,11 +40,11 @@ export default function Bord() {
       totalMember: totalMember,
       event_day: event_day,
       day: day,
-      organizer: origanizer,
+      origanizer: origanizer,
       commit: commit,
       Beginer: Beginer,
       reword: reword,
-      message: msg,
+      msg: msg,
       position: position,
       slackUrl: slackUrl,
     })
@@ -77,7 +76,18 @@ export default function Bord() {
         console.log(error)
       })
     // ------------------------------------------
-    dispatch(resetBord(user_masterid.user.uid))
+    setTitle('')
+    setOriganizer('')
+    setEvent_day('2021-01-01')
+    setDay('1')
+    setTotalMember('1')
+    setCommit('1〜4')
+    setBeginer('either')
+    setReword('either')
+    setMsg('')
+    setSlackUrl('')
+    setPosition('frontend')
+
     alert('追加完了しました。')
   }
 
@@ -91,6 +101,7 @@ export default function Bord() {
               id="outlined-basic"
               variant="outlined"
               size="small"
+              value={title}
               className={styles.white}
               onChange={(e) => setTitle(e.target.value)}
             />
@@ -151,6 +162,7 @@ export default function Bord() {
               id="outlined-basic"
               variant="outlined"
               size="small"
+              value={origanizer}
               className={styles.white}
               onChange={(e) => setOriganizer(e.target.value)}
             />
@@ -195,7 +207,7 @@ export default function Bord() {
                 <FormControlLabel
                   control={<Radio />}
                   label="歓"
-                  value="OK"
+                  value="ok"
                   onChange={(e) => setReword(e.target.value)}
                   checked={reword === 'ok'}
                 />
@@ -203,14 +215,14 @@ export default function Bord() {
                 <FormControlLabel
                   control={<Radio />}
                   label="不"
-                  value="NG"
+                  value="ng"
                   onChange={(e) => setReword(e.target.value)}
-                  checked={reword === 'null'}
+                  checked={reword === 'ng'}
                 />
                 <FormControlLabel
                   control={<Radio />}
                   label="どちらでも良い"
-                  value="null"
+                  value="either"
                   onChange={(e) => setReword(e.target.value)}
                   checked={reword === 'either'}
                 />
@@ -225,21 +237,21 @@ export default function Bord() {
                 <FormControlLabel
                   control={<Radio />}
                   label="有"
-                  value="OK"
+                  value="ok"
                   onChange={(e) => setBeginer(e.target.value)}
                   checked={Beginer === 'ok'}
                 />
                 <FormControlLabel
                   control={<Radio />}
                   label="無"
-                  value="NG"
+                  value="ng"
                   onChange={(e) => setBeginer(e.target.value)}
                   checked={Beginer === 'ng'}
                 />
                 <FormControlLabel
                   control={<Radio />}
                   label="未"
-                  value="null"
+                  value="either"
                   onChange={(e) => setBeginer(e.target.value)}
                   checked={Beginer === 'either'}
                 />
@@ -254,6 +266,7 @@ export default function Bord() {
               id="outlined-basic"
               variant="outlined"
               size="small"
+              value={msg}
               className={styles.white}
               onChange={(e) => setMsg(e.target.value)}
             />
@@ -264,6 +277,7 @@ export default function Bord() {
               id="outlined-basic"
               variant="outlined"
               size="small"
+              value={slackUrl}
               className={styles.white}
               onChange={(e) => setSlackUrl(e.target.value)}
             />
@@ -309,9 +323,13 @@ export default function Bord() {
               </RadioGroup>
             </FormControl>
           </div>
-          <button onClick={() => postQuest()} className={styles.btn}>
-            投稿
-          </button>
+          {title.length > 0 && slackUrl.length > 0 && origanizer.length > 0 && msg.length > 0 ? (
+            <button onClick={() => postQuest()} className={styles.btn}>
+              投稿
+            </button>
+          ) : (
+            <p className={styles.err}>全項目記入すると、送信ボタンが出現します。</p>
+          )}
         </div>
       </div>
     </div>
