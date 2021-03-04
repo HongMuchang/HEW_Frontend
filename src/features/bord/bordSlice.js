@@ -17,6 +17,7 @@ const initialState = {
     reword: 1,
     msg: '',
     position: 1,
+    slackUrl: '',
     members: [
       { uid: 'sadadsadsasa', position: '1' },
       { uid: 'sadadsadsasa', position: '1' },
@@ -43,6 +44,7 @@ export const bordSlice = createSlice({
       bord.Beginer = action.payload.Beginer
       bord.reword = action.payload.reword
       bord.msg = action.payload.msg
+      bord.slackUrl = action.payload.slackUrl
       bord.position = action.payload.position
     },
 
@@ -69,6 +71,7 @@ export const bordSlice = createSlice({
       bord.reword = ''
       bord.msg = ''
       bord.position = 'frontend'
+      bord.slackUrl = ''
     },
   },
 })
