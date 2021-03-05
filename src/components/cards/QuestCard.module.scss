@@ -1,43 +1,54 @@
-@import '../../../styles/variables';
-
 //クエスト一覧の画像
-.bord{
+.bord {
   width: 100%;
-  display: flex;
-  justify-content: center;
-  margin:  30px auto;
+  margin: 30px auto;
   border: 2px solid rgba(133, 101, 101, 0.864);
-  width: min(650px,95vw);
+  width: min(650px, 95vw);
   height: 20vh;
-  background-image: url('../../../public/bord.jpg'); 
+  background-image: url('../../../public/bord.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-
-  .left{
-    width: 80%;
-
-    .quest{
-      display: flex;
+  .bord_content {
+    display: flex;
+    justify-content: space-between;
+    .left {
+      width: 80%;
+      .flex {
+        display: flex;
+      }
+      .id {
+        //number
+        font-size: 5px;
+        color: rgb(116, 113, 113);
+        padding: 4px 0 0 2px;
+      }
+     
+      }
+      .title {
+        font-size: 14px;
+      }
     }
+    .right {
+      width: 20%;
+      .bord_time {
+        font-size: 8px;
+        display: inline-block;
+        color: rgba(36, 30, 30, 0.515);
+      }
+    }
+      .quest {
+        text-align: center;
+        font-weight: lighter;
+        font-family: sans-serif;
+        color: rgb(0, 0, 0);
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        .title {
+          padding-left: 20px;
+          font-weight: lighter;
+          font-size: 25px;
+          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+      }
     
-    .span{
-      
-
-    }
-
-    .bord_time{
-      display:inline-block;
-      color: rgba(36, 30, 30, 0.515);
-    }
-  
-    .title{
-      font-size:14px;
-    }
-  }
-
-  .right{
-    width: 20%;
-  }
-
 }
