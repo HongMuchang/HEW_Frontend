@@ -77,7 +77,7 @@ export default function Post({ post }) {
               </ul>
               <Link href={`/quest_bord/${post.id}/entry`} post={post}>
                 <div className={styles.btn}>
-                  <a>参加する</a>
+                  <a>参加申請</a>
                 </div>
               </Link>
             </div>
