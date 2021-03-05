@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Layout } from '../../../components/layouts/Layout/Layout'
 import { getAllPostIds, getPostData } from '../../../../lib/post'
-import styles from '../quest_bord_id.module.scss'
+import styles from './entry.module.scss'
 import { auth } from '../../../utils/firebase'
 import Title from '../../../components/parts/Title'
 import axios from 'axios'
