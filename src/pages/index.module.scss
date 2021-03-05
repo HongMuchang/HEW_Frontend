@@ -1,5 +1,13 @@
 @import '../../styles/variables.scss';
 
-.header_logo{
-  width: 100%;
+.contents{
+
+  .header_logo{
+    width: 100%;
+  }
+  .title{
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+  }
 }

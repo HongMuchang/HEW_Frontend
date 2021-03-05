@@ -6,16 +6,26 @@ import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 import styles from './QuestCard.module.scss'
 
-export default function QuestCard({ title, contact, time }) {
+export default function QuestCard({ title, contact, time, id }) {
   return (
     <Card className={styles.bord}>
-      <CardContent>
-        <h3>クエスト名:{title}</h3>
-      </CardContent>
-      {contact}
-      <div className={styles.flex}>
-        <Typography className={styles.bord_time}>投稿日:{time}</Typography>
+      <div className={styles.bord_content}>
+        <div className={styles.left}>
+          <div className={styles.flex}>
+            <img src={'../quest_icon.png'} width={30} />
+            <p className={styles.id}>NO {id}</p>
+          </div>
+        </div>
+        <div className={styles.right}>
+          <Typography className={styles.bord_time}>投稿日:{time}</Typography>
+        </div>
       </div>
+      <CardContent className={styles.a}>
+        <h3 className={styles.quest}>
+          クエスト:
+          <span className={styles.title}>{title}</span>
+        </h3>
+      </CardContent>
     </Card>
   )
 }

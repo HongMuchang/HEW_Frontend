@@ -7,7 +7,6 @@ const initialState = {
     id: 0,
   },
   create_bord: {
-    id: 1,
     master_id: 0,
     title: '',
     event_day: '2021-01-01',
@@ -18,6 +17,7 @@ const initialState = {
     reword: 1,
     msg: '',
     position: 1,
+    slackUrl: '',
     members: [
       { uid: 'sadadsadsasa', position: '1' },
       { uid: 'sadadsadsasa', position: '1' },
@@ -34,7 +34,6 @@ export const bordSlice = createSlice({
     //募集するボードの状態
     createBord: (state, action) => {
       const bord = state.create_bord
-      bord.id = action.payload.id + 1
       bord.master_id = action.payload.master_id
       bord.title = action.payload.title
       bord.totalMember = action.payload.totalMember
@@ -45,6 +44,7 @@ export const bordSlice = createSlice({
       bord.Beginer = action.payload.Beginer
       bord.reword = action.payload.reword
       bord.msg = action.payload.msg
+      bord.slackUrl = action.payload.slackUrl
       bord.position = action.payload.position
     },
 
@@ -71,6 +71,7 @@ export const bordSlice = createSlice({
       bord.reword = ''
       bord.msg = ''
       bord.position = 'frontend'
+      bord.slackUrl = ''
     },
   },
 })

@@ -5,14 +5,12 @@ import CompassCard from '../../components/cards/CompassCard'
 
 export default function compass_bord({ posts }) {
   // const var user = firebase.auth().currentUser;
-  console.log(posts)
-
   return (
     <Layout title="クエスト募集画面">
       <div className={styles.bords}>
         <ul>
-          {posts.map((post) => (
-            <li key={post} className={styles.a}>
+          {posts.map((post, index) => (
+            <li key={index} className={styles.a}>
               <CompassCard title={post.title} start={post.started_at} url={post.event_url} />
             </li>
           ))}

@@ -61,13 +61,23 @@ export default function Post({ post }) {
             <div className={styles.content}>
               <Title name={'メンバー'} />
               <ul>
-                {ary.map((a, index) => (
-                  <li>{a}</li>
-                ))}
+                {ary.map((position) =>
+                  position == 'frontend' ? (
+                    <img src={'../bg_frontend.png'} className={styles.position_img} />
+                  ) : '' || position == 'backend' ? (
+                    <img src={'../bg_backend.png'} className={styles.position_img} />
+                  ) : '' || position == 'infra' ? (
+                    <img src={'../bg_infra.png'} className={styles.position_img} />
+                  ) : '' || position == 'no' ? (
+                    <img src={'../bg_no.png'} className={styles.position_img} />
+                  ) : (
+                    ''
+                  )
+                )}
               </ul>
               <Link href={`/quest_bord/${post.id}/entry`} post={post}>
-                <div>
-                  <a>参加する</a>
+                <div className={styles.btn}>
+                  <a>参加申請</a>
                 </div>
               </Link>
             </div>

@@ -54,7 +54,10 @@ export default function Home() {
         <Login />
       ) : (
         <Layout title="Guild Hack">
-          <img src={'./top_header4.png'} width={800} className={styles.header_logo} />
+          <div className={styles.contents}>
+            <img src={'./top_header3.png'} width={800} className={styles.header_logo} />
+            <p className={styles.title}>Guild Hackとは?</p>
+          </div>
         </Layout>
       )}
     </div>
