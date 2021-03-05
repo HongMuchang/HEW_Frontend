@@ -66,17 +66,14 @@
       }
       .btn{
         color: rgb(0, 0, 0);
-        width:80px;
+        width:100px;
         height: 50px;
         border: 8px double #85684b;
         background-color: rgba(199, 123, 24, 0.981);
         cursor: pointer;
-        margin-top: 8vh;
-        margin-left: 20vw;
-        
-        &:hover{
-          opacity: 0.6;
-        }
+        margin-top: 35vh;
+        margin-left: 15vw;
+        padding: 4px 0 0 7px;
         
         &:hover{
           opacity: 0.6;
@@ -96,9 +93,6 @@
     }  
     .content_radio{
       padding-top: 13px;
-    }
-    .position_img{
-      padding: 5px 3px;
     }
   }
 }
