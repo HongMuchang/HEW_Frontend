@@ -15,6 +15,7 @@ import {
   NativeSelect,
 } from '@material-ui/core'
 import { Alert, AlertTitle } from '@material-ui/lab'
+import { PowerInputSharp } from '@material-ui/icons'
 
 export default function Bord() {
   const dispatch = useDispatch()
@@ -87,7 +88,6 @@ export default function Bord() {
     setMsg('')
     setSlackUrl('')
     setPosition('frontend')
-
     alert('追加完了しました。')
   }
 
