@@ -65,13 +65,18 @@
       opacity: 0.7;
       }
       .btn{
-        color: rgb(255, 255, 255);
-        font-weight: bold;
+        color: rgb(0, 0, 0);
         width:80px;
         height: 50px;
         border: 8px double #85684b;
-        background-color: rgba(225, 215, 202, 0.981);
+        background-color: rgba(199, 123, 24, 0.981);
         cursor: pointer;
+        margin-top: 8vh;
+        margin-left: 20vw;
+        
+        &:hover{
+          opacity: 0.6;
+        }
         
         &:hover{
           opacity: 0.6;
@@ -91,6 +96,9 @@
     }  
     .content_radio{
       padding-top: 13px;
+    }
+    .position_img{
+      padding: 5px 3px;
     }
   }
 }
