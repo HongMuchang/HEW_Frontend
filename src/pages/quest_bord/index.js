@@ -11,8 +11,7 @@ export default function quest_bord({ posts }) {
   return (
     <Layout title="クエスト一覧画面">
       <div className={styles.bords}>
-        <h1>quest_board</h1>
-        <ul>
+        <ul className={styles.bord_area}>
           {posts.map((post) => (
             <Link href={`/quest_bord/${post.id}`}>
               <li key={post} className={styles.hover}>
