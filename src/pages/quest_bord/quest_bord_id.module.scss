@@ -78,10 +78,11 @@
         &:hover{
           opacity: 0.6;
         }
-        @include mq(md) {
-          
-          
-        }    
+      }
+      .endbtn{
+        margin-top: 25vh;
+        margin-left: 15vw;
+        padding: 4px 0 0 23px;
       }
       .content{
         padding-top: 30px;        
@@ -93,6 +94,9 @@
     }  
     .content_radio{
       padding-top: 13px;
+    }
+    .position_img{
+      padding: 0 6px;
     }
   }
 }

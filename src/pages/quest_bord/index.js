@@ -7,7 +7,9 @@ import Login from '../../pages/login'
 import { auth } from '../../utils/firebase'
 
 export default function quest_bord({ posts }) {
-  console.log(posts)
+  console.log('---------------')
+  console.log(auth.currentUser)
+  console.log('---------------')
   return (
     <Layout title="クエスト一覧画面">
       <div className={styles.bords}>
