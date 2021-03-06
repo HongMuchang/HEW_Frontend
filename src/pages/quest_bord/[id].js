@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { Layout } from '../../components/layouts/Layout/Layout'
 import { getAllPostIds, getPostData } from '../../../lib/post'
 import Title from '../../components/parts/Title'
@@ -5,6 +6,8 @@ import styles from './quest_bord_id.module.scss'
 import Link from 'next/link'
 
 export default function Post({ post }) {
+  const [positionImg, setPositionImg] = useState(true)
+
   const ary = []
 
   for (let i = 0; i < post.totalMember; i++) {
@@ -75,11 +78,17 @@ export default function Post({ post }) {
                   )
                 )}
               </ul>
-              <Link href={`/quest_bord/${post.id}/entry`} post={post}>
-                <div className={styles.btn}>
-                  <a>参加申請</a>
+              {ary.pop() == 'no' ? (
+                <Link href={`/quest_bord/${post.id}/entry`} post={post}>
+                  <div className={styles.btn}>
+                    <a>参加申請</a>
+                  </div>
+                </Link>
+              ) : (
+                <div>
+                  <img src={'../endbtn_icon.png'} width={150} className={styles.endbtn} alt="" />
                 </div>
-              </Link>
+              )}
             </div>
           </div>
         </div>
