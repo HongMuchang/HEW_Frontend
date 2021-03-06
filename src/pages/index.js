@@ -9,10 +9,6 @@ import Login from './login'
 import styles from './index.module.scss'
 
 export default function Home() {
-  console.log('---------------')
-  console.log(auth.currentUser)
-  console.log('---------------')
-
   const user = useSelector(selectUser)
   const dispatch = useDispatch()
 
