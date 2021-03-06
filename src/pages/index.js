@@ -15,6 +15,7 @@ export default function Home() {
   useEffect(() => {
     //authUserは現在ログインしてる人の情報
     const unSub = auth.onAuthStateChanged((authUser) => {
+      console.log(authUser.email)
       if (authUser) {
         dispatch(
           login({
@@ -28,6 +29,7 @@ export default function Home() {
             uid: authUser.uid,
             name: authUser.displayName,
             isLogin: true,
+            email: authUser.email,
           })
           .then(function (response) {
             console.log(response)
