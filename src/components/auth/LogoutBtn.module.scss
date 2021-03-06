@@ -1,0 +1,13 @@
+@import '../../../styles/variables';
+
+.logoutBtn{
+  width: 40%;
+  color: rgb(255, 254, 251);
+  font-weight: bold;
+  background-color: rgb(240, 73, 73);
+  padding:10px;
+  margin:15px;
+}
+.logoutBtn:hover{
+  opacity: 0.7;
+}
