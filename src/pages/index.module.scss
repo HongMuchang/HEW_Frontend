@@ -1,13 +1,95 @@
 @import '../../styles/variables.scss';
 
 .contents{
+    background-image: url('../../public/bord.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+    
+    .bg_white{
+      background: rgba(248, 248, 248, 0.3);
 
-  .header_logo{
+      .header_logo{
     width: 100%;
   }
-  .title{
+
+  .title_content{
+    width: 36%;
     text-align: center;
-    font-size: 40px;
+    padding: 10vh 0px;
+    margin: 0 auto;
+    border-radius: 4px;
+  
+    .title{
+      text-align: center;
+      padding: 20px 0px;
+      font-size: 35px;
+      font-weight:500;
+      font-family: 'Times New Roman', Times, serif;
+      
+    }
+
+    p{
+      font-size: 24px;
+      font-family: 'Times New Roman', Times, serif;
+      padding:10px 0;
+    }
+  }
+.box{
+  margin: 0 auto;
+  padding: 10vh 0px;
+  background: rgba(245, 255, 200, 0.3);
+
+  
+.use_content{
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row-reverse;
+  justify-content: space-around;
+  
+  
+  .sub_title{
+    color: white;
+    width: 40%;
+    text-align: center;
+    font-size: 25px;
     font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    border: 1px solid rgb(255, 240, 240);
+    background-color: black;
+    margin-top: 20px;
+  }
+  li{
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+    .sub_img{
+      width: 60%;
+    }
+  }}
+  .sard_content{
+    width: 100%;
+    margin: 0 auto;
+    padding: 10vh 0px;
+    
+
+    .sard_title{
+      text-align: center;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 30px;
+    }
+    .sard_title_content{
+      padding: 5vh 0px 10vh 0;
+      font-size: 20px;
+      text-align: center;
+
+      a{
+        color: rgb(61, 82, 245);
+      }
+    }
+  }
   }
 }
