@@ -48,11 +48,28 @@ export default function Post({ post }) {
             </div>
             <div className={styles.content}>
               <Title name={'初心者歓迎'} />
+              {post.beginner == 'ok' ? (
+                <p>歓迎</p>
+              ) : '' || post.beginner == 'ng' ? (
+                <p>不歓迎</p>
+              ) : '' || post.beginner == 'either' ? (
+                <p>どちらでも良い</p>
+              ) : (
+                ''
+              )}
               <p>{post.beginner}</p>
             </div>
             <div className={styles.content}>
               <Title name={'報酬'} />
-              <p>{post.reword}</p>
+              {post.reword == 'ok' ? (
+                <p>有り</p>
+              ) : '' || post.reword == 'ng' ? (
+                <p>無し</p>
+              ) : '' || post.reword == 'either' ? (
+                <p>未定</p>
+              ) : (
+                ''
+              )}
             </div>
           </div>
           {/* right */}
