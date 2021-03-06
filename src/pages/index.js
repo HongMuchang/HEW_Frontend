@@ -9,6 +9,10 @@ import Login from './login'
 import styles from './index.module.scss'
 
 export default function Home() {
+  console.log('---------------')
+  console.log(auth.currentUser)
+  console.log('---------------')
+
   const user = useSelector(selectUser)
   const dispatch = useDispatch()
 
@@ -55,8 +59,42 @@ export default function Home() {
       ) : (
         <Layout title="Guild Hack">
           <div className={styles.contents}>
-            <img src={'./top_header3.png'} width={800} className={styles.header_logo} />
-            <p className={styles.title}>Guild Hackとは?</p>
+            <div className={styles.bg_white}>
+              <img src={'./top_header3.png'} width={800} height={400} className={styles.header_logo} />
+
+              <div className={styles.title_content}>
+                <h1 className={styles.title}>Guild Hackとは?</h1>
+                <p>自分にあった</p>
+                <p>Guild(ギルド)を募って</p>
+                <p>ハッカソンに参加しよう</p>
+              </div>
+
+              <div className={styles.box}>
+                <div className={styles.use_content}>
+                  <div>
+                    <h3 className={styles.sub_title}>使い方</h3>
+                    <ul>
+                      <li>①参加したいハッカソンを見つける</li>
+                      <li>②募集をかける</li>
+                      <li>③メンバーを募る</li>
+                      <li>④Slackのワークスペースに移動</li>
+                      <li>⑤開発スタート</li>
+                    </ul>
+                  </div>
+                  <img src={'../modan2.png'} width={500} className={styles.sub_img} alt="" />
+                </div>
+              </div>
+              <div className={styles.sard_content}>
+                <h3 className={styles.sard_title}>お問い合わせ</h3>
+                <p className={styles.sard_title_content}>
+                  不具合・ご要望に関するお問い合わせは <br />
+                  <a href="https://forms.gle/g7gM7cQFDCJxm3QA8" target="_blank">
+                    こちらのフォーム
+                  </a>{' '}
+                  からご連絡を頂けると幸いです。
+                </p>
+              </div>
+            </div>
           </div>
         </Layout>
       )}
