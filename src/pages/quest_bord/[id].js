@@ -4,12 +4,17 @@ import { getAllPostIds, getPostData } from '../../../lib/post'
 import Title from '../../components/parts/Title'
 import styles from './quest_bord_id.module.scss'
 import Link from 'next/link'
+import { auth } from '../../utils/firebase'
+import { useSelector } from 'react-redux'
 
 export default function Post({ post }) {
-  const [positionImg, setPositionImg] = useState(true)
+  const [menberCount, setMenberCount] = useState(0)
+  const user_masterid = useSelector((state) => state.user) //今まで追加された数
+  const uid = user_masterid.user.uid // uid
+
+console.log(post)
 
   const ary = []
-
   for (let i = 0; i < post.totalMember; i++) {
     if (post.members[i] == undefined) {
       ary.push('no')
@@ -17,8 +22,6 @@ export default function Post({ post }) {
       ary.push(post.members[i].position)
     }
   }
-
-  console.log(ary)
 
   if (!post) {
     return <div>Loading...</div>
@@ -57,7 +60,6 @@ export default function Post({ post }) {
               ) : (
                 ''
               )}
-              <p>{post.beginner}</p>
             </div>
             <div className={styles.content}>
               <Title name={'報酬'} />
@@ -95,16 +97,18 @@ export default function Post({ post }) {
                   )
                 )}
               </ul>
-              {ary.pop() == 'no' ? (
+              {ary.pop() != 'no' && (
+                <div>
+                  <img src={'../endbtn_icon.png'} width={150} className={styles.endbtn} alt="" />
+                </div>
+              )}
+
+              {ary.pop() == 'no' && (
                 <Link href={`/quest_bord/${post.id}/entry`} post={post}>
                   <div className={styles.btn}>
                     <a>参加申請</a>
                   </div>
                 </Link>
-              ) : (
-                <div>
-                  <img src={'../endbtn_icon.png'} width={150} className={styles.endbtn} alt="" />
-                </div>
               )}
             </div>
           </div>
@@ -127,5 +131,6 @@ export async function getStaticProps({ params }) {
     props: {
       post,
     },
+    revalidate: 3,
   }
 }

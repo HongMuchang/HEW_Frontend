@@ -64,7 +64,7 @@ export default function Bord() {
         totalMember: totalMember,
         organizer: origanizer,
         commit: commit,
-        Beginer: Beginer,
+        beginner: Beginer,
         reword: reword,
         message: msg,
         position: position,

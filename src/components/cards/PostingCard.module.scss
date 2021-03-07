@@ -1,4 +1,16 @@
 //クエスト一覧の画像
+.bords2{
+  font-size: 20px;
+  padding-top: 40vh;
+  text-align: center;
+  background-image: url('../../../public/bord_image.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
 .bords{
   background-image: url('../../../public/bord_image.jpg');
   background-repeat: no-repeat;
@@ -6,6 +18,7 @@
   background-position: center center;
   padding: 50px 0px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
 
 .bord {
   width: 100%;

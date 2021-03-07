@@ -23,7 +23,11 @@ export default function posting_bord() {
 
   return date.length == 0 ? (
     <Layout title="クエスト募集画面">
-      <p>現在存在しません</p>
+      <div className={styles.bords2}>
+        <div>
+          <p>現在存在しません</p>
+        </div>
+      </div>
     </Layout>
   ) : (
     <Layout title="クエスト募集画面">
