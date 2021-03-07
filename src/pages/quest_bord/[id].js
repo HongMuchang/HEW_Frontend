@@ -58,7 +58,6 @@ export default function Post({ post }) {
               ) : (
                 ''
               )}
-              <p>{post.beginner}</p>
             </div>
             <div className={styles.content}>
               <Title name={'報酬'} />
@@ -130,5 +129,6 @@ export async function getStaticProps({ params }) {
     props: {
       post,
     },
+    revalidate: 3,
   }
 }
