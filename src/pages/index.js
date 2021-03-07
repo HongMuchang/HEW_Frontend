@@ -15,7 +15,6 @@ export default function Home() {
   useEffect(() => {
     //authUserは現在ログインしてる人の情報
     const unSub = auth.onAuthStateChanged((authUser) => {
-      console.log(authUser.email)
       if (authUser) {
         dispatch(
           login({
