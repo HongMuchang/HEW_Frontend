@@ -12,6 +12,8 @@ export default function Post({ post }) {
   const user_masterid = useSelector((state) => state.user) //今まで追加された数
   const uid = user_masterid.user.uid // uid
 
+console.log(post)
+
   const ary = []
   for (let i = 0; i < post.totalMember; i++) {
     if (post.members[i] == undefined) {
