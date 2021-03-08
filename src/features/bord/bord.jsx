@@ -199,7 +199,7 @@ export default function Bord() {
               </FormControl>
             </div>
           </div>
-          {/* ------Commit------- */}
+          {/* ------初心者------- */}
           <div>
             <FormControl component="fieldset" className={styles.content_radio}>
               <Title name={'初心者歓迎'} />
@@ -208,28 +208,28 @@ export default function Bord() {
                   control={<Radio />}
                   label="歓"
                   value="ok"
-                  onChange={(e) => setReword(e.target.value)}
-                  checked={reword === 'ok'}
+                  onChange={(e) => setBeginer(e.target.value)}
+                  checked={Beginer === 'ok'}
                 />
 
                 <FormControlLabel
                   control={<Radio />}
                   label="不"
                   value="ng"
-                  onChange={(e) => setReword(e.target.value)}
-                  checked={reword === 'ng'}
+                  onChange={(e) => setBeginer(e.target.value)}
+                  checked={Beginer === 'ng'}
                 />
                 <FormControlLabel
                   control={<Radio />}
                   label="どちらでも良い"
                   value="either"
-                  onChange={(e) => setReword(e.target.value)}
-                  checked={reword === 'either'}
+                  onChange={(e) => setBeginer(e.target.value)}
+                  checked={Beginer === 'either'}
                 />
               </RadioGroup>
             </FormControl>
           </div>
-          {/* ------Beginer------- */}
+          {/* ------報酬------- */}
           <div>
             <FormControl component="fieldset" className={styles.content_radio}>
               <Title name={'報酬'} />
@@ -238,22 +238,22 @@ export default function Bord() {
                   control={<Radio />}
                   label="有"
                   value="ok"
-                  onChange={(e) => setBeginer(e.target.value)}
-                  checked={Beginer === 'ok'}
+                  onChange={(e) => setReword(e.target.value)}
+                  checked={reword === 'ok'}
                 />
                 <FormControlLabel
                   control={<Radio />}
                   label="無"
                   value="ng"
-                  onChange={(e) => setBeginer(e.target.value)}
-                  checked={Beginer === 'ng'}
+                  onChange={(e) => setReword(e.target.value)}
+                  checked={reword === 'ng'}
                 />
                 <FormControlLabel
                   control={<Radio />}
                   label="未"
                   value="either"
-                  onChange={(e) => setBeginer(e.target.value)}
-                  checked={Beginer === 'either'}
+                  onChange={(e) => setReword(e.target.value)}
+                  checked={reword === 'either'}
                 />
               </RadioGroup>
             </FormControl>
