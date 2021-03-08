@@ -12,7 +12,7 @@ export default function Post({ post }) {
   const user_masterid = useSelector((state) => state.user) //今まで追加された数
   const uid = user_masterid.user.uid // uid
 
-console.log(post)
+  console.log(post)
 
   const ary = []
   for (let i = 0; i < post.totalMember; i++) {
@@ -97,18 +97,16 @@ console.log(post)
                   )
                 )}
               </ul>
-              {ary.pop() != 'no' && (
-                <div>
-                  <img src={'../endbtn_icon.png'} width={150} className={styles.endbtn} alt="" />
-                </div>
-              )}
-
-              {ary.pop() == 'no' && (
+              {ary.pop() == 'no' ? (
                 <Link href={`/quest_bord/${post.id}/entry`} post={post}>
                   <div className={styles.btn}>
                     <a>参加申請</a>
                   </div>
                 </Link>
+              ) : (
+                <div>
+                  <img src={'../endbtn_icon.png'} width={150} className={styles.endbtn} alt="" />
+                </div>
               )}
             </div>
           </div>
