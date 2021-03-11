@@ -1,4 +1,5 @@
-# HEW 2021
+# HAL EVENT WEEK  2021
+~自分にあったハッカソンに参加できるサービス
 
 
 <img src="https://i.imgur.com/BT0gCCE.jpg" width="600px" height="900px" style="padding-bottom:20px;">
